@@ -1,3 +1,0 @@
-/home/eddi/proj/SDC-cplusplus-Study-Team1/Board/cmake-build-debug/CMakeFiles/class_test.dir
-/home/eddi/proj/SDC-cplusplus-Study-Team1/Board/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/eddi/proj/SDC-cplusplus-Study-Team1/Board/cmake-build-debug/CMakeFiles/rebuild_cache.dir
