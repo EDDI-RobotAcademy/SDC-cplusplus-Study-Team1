@@ -37,6 +37,21 @@ add_executable(class_test main.cpp
         ui/console/window/console_window.h
         ui/console/user_keyboard/user_keyboard_input.cpp
         ui/console/user_keyboard/user_keyboard_input.h
+        ui/console/service/UiServiceImpl.cpp
+        ui/console/service/UiServiceImpl.h
+        ui/console/service/UiService.h
+        ui/console/service/handler/create/UiServiceCreateHandler.cpp
+        ui/console/service/handler/create/UiServiceCreateHandler.h
+        ui/console/service/handler/exit/UiServiceExitHandler.cpp
+        ui/console/service/handler/exit/UiServiceExitHandler.h
+        ui/console/service/handler/list/UiServiceListHandler.cpp
+        ui/console/service/handler/list/UiServiceListHandler.h
+        ui/console/service/handler/modify/UiServiceModifyHandler.cpp
+        ui/console/service/handler/modify/UiServiceModifyHandler.h
+        ui/console/service/handler/read/UiServiceReadHandler.cpp
+        ui/console/service/handler/read/UiServiceReadHandler.h
+        ui/console/service/handler/remove/UiServiceRemoveHandler.cpp
+        ui/console/service/handler/remove/UiServiceRemoveHandler.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
