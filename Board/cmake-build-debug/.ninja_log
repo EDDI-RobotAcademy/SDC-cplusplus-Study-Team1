@@ -1,0 +1,20 @@
+# ninja log v5
+1	422	1701415624572760453	CMakeFiles/class_test.dir/dice/Dice.cpp.o	f3d3b2fa439fa3a9
+4	6146	1701649982959758898	CMakeFiles/class_test.dir/board/repository/BoardRepositoryImpl.cpp.o	b50159043593fd69
+1	319	1701651023443300793	CMakeFiles/class_test.dir/board/controller/BoardController.cpp.o	3439bbd03cdbaf33
+0	167	1701415624320765042	CMakeFiles/class_test.dir/player/Player.cpp.o	3a8bc164fe0da4fb
+415	710	1701415624860755210	CMakeFiles/class_test.dir/board/entity/Board.cpp.o	f5e55d710284927b
+422	709	1701415624860755210	CMakeFiles/class_test.dir/mysql/DbProcess.cpp.o	8d109f65141538d1
+403	415	1701415624568760526	CMakeFiles/class_test.dir/board/service/response/BoardResponse.cpp.o	17fe548a86e8729b
+0	481	1701651023603299265	CMakeFiles/class_test.dir/main.cpp.o	3d15cb6806135888
+1	374	1701651023499300258	CMakeFiles/class_test.dir/board/service/BoardServiceImpl.cpp.o	e29bcef2b80595c9
+481	1450	1701651024575289984	class_test	5d403a23c5a32b3e
+0	19	1701654959841510810	build.ninja	583c7d755ae579c4
+2	11	1701654959857510471	CMakeFiles/class_test.dir/board/service/response/BoardResponse.cpp.o	a783166d81519bab
+11	294	1701654960141504436	CMakeFiles/class_test.dir/board/entity/Board.cpp.o	b1ecdddea6963899
+1	374	1701654960217502822	CMakeFiles/class_test.dir/board/service/BoardServiceImpl.cpp.o	936d456299c2d685
+2	293	1701654967485348720	CMakeFiles/class_test.dir/mysql/DbProcess.cpp.o	1dbfe2410033bdfa
+2	363	1701654967557347196	CMakeFiles/class_test.dir/board/repository/BoardRepositoryImpl.cpp.o	a00ae2527e959c15
+1	323	1701654988592904316	CMakeFiles/class_test.dir/board/controller/BoardController.cpp.o	2295329e38c2270
+1	450	1701654988720901636	CMakeFiles/class_test.dir/main.cpp.o	3916f4f851da6de7
+450	535	1701654988804899877	class_test	5f0ee94f8a8f37b6

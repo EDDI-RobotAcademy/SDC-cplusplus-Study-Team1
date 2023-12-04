@@ -1,0 +1,16 @@
+/home/eddi/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/eddi/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/eddi/proj/SDC-cplusplus-Study-Team1/Board -B /home/eddi/proj/SDC-cplusplus-Study-Team1/Board/cmake-build-debug
+-- Configuring done (0.0s)
+CMake Error at CMakeLists.txt:11 (add_executable):
+  Cannot find source file:
+
+    dice/Dice.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:11 (add_executable):
+  No SOURCES given to target: class_test
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
