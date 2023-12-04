@@ -23,6 +23,14 @@ add_executable(class_test main.cpp
         mysql/DbProcess.h
         board/repository/BoardRepositoryImpl.cpp
         board/repository/BoardRepositoryImpl.h
+        account/entity/Account.cpp
+        account/entity/Account.h
+        account/controller/AccountController.cpp
+        account/controller/AccountController.h
+        account/repository/AccountRepository.h
+        account/repository/AccountRepository.cpp
+        account/service/AccountService.cpp
+        account/service/AccountService.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
