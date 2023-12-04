@@ -23,6 +23,12 @@ add_executable(class_test main.cpp
         mysql/DbProcess.h
         board/repository/BoardRepositoryImpl.cpp
         board/repository/BoardRepositoryImpl.h
+        utility/trim.cpp
+        utility/trim.h
+        ui/console/window/console_window.cpp
+        ui/console/window/console_window.h
+        ui/console/user_keyboard/user_keyboard_input.cpp
+        ui/console/user_keyboard/user_keyboard_input.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
