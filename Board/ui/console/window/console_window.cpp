@@ -40,7 +40,6 @@ void console_window::start_console_ui_window()
             UiServiceExitHandler _uiServiceExitHandler;
             _uiServiceExitHandler;
         }
-
     }
 }
 
