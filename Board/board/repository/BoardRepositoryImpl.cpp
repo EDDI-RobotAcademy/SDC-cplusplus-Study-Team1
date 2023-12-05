@@ -63,9 +63,9 @@ std::vector<Board> BoardRepositoryImpl::findAll()
     std::vector<Board> boardList = fetchResults(db.getConn()); // db.getConn -> 저장된 데이터 불러오기
 
     // 처리 결과 학인하는 부분
-//    for (const auto& board : boardList) {
-//        board.printBoardInfo();
-//    }
+    for (const auto& board : boardList) {
+        board.printBoardInfo();
+    }
 
     return boardList;
 }
