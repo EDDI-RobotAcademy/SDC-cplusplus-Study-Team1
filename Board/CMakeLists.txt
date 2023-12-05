@@ -52,6 +52,8 @@ add_executable(class_test main.cpp
         ui/console/service/handler/read/UiServiceReadHandler.h
         ui/console/service/handler/remove/UiServiceRemoveHandler.cpp
         ui/console/service/handler/remove/UiServiceRemoveHandler.h
+        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.cpp
+        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
