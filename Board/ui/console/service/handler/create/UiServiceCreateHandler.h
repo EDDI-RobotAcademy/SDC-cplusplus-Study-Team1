@@ -12,10 +12,10 @@ private:
     std::string content;
 public:
     UiServiceCreateHandler();
-    std::string getTitle();
-    std::string getWriter();
-    std::string getContent();
-    std::string getCreatPost();
+//    std::string getTitle();
+//    std::string getWriter();
+//    std::string getContent();
+    void getCreatPost();
 
 
     ~UiServiceCreateHandler();

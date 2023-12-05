@@ -6,7 +6,10 @@
 #include "UiServiceExitHandler.h"
 
 UiServiceExitHandler::UiServiceExitHandler () {
-    std::cout << "UiServiceExitHandler 함수 호출 확인" << std::endl;
+    exit()
 }
 
-UiServiceExitHandler::~UiServiceExitHandler() { }
+
+UiServiceExitHandler::~UiServiceExitHandler() {
+    std::cout << "게시판을 종료합니다." << std::endl;
+}
