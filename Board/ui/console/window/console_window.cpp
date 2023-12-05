@@ -11,6 +11,7 @@
 #include "../../../board/repository/BoardRepositoryImpl.h"
 #include "../user_keyboard/user_keyboard_input.h"
 #include "../service/handler/create/UiServiceCreateHandler.h"
+#include "../service/handler/exit/UiServiceExitHandler.h"
 
 #include <string>
 #include <iostream>
@@ -34,12 +35,12 @@ void console_window::start_console_ui_window()
     while (!player_enter_quit)
     {
         user_choice_command_number = user_choice_number_for_board_command();
-        if(user_choice_command_number == 1)
+        if(user_choice_command_number == 5)
         {
-            UiServiceCreateHandler _uiServiceCreateHandler;
-            _uiServiceCreateHandler.getCreatPost();
-
+            UiServiceExitHandler _uiServiceExitHandler;
+            _uiServiceExitHandler;
         }
+
     }
 }
 
