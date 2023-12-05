@@ -35,10 +35,15 @@ void console_window::start_console_ui_window()
     while (!player_enter_quit)
     {
         user_choice_command_number = user_choice_number_for_board_command();
+        if(user_choice_command_number == 1)
+        {
+            UiServiceExitHandler _uiServiceExitHandler;
+
+        }
         if(user_choice_command_number == 5)
         {
             UiServiceExitHandler _uiServiceExitHandler;
-            _uiServiceExitHandler;
+
         }
     }
 }
