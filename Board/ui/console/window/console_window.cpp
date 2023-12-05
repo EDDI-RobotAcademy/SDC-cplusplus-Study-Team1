@@ -45,7 +45,8 @@ void console_window::start_console_ui_window()
 
 int console_window::user_choice_number_for_board_command()
 {
-    std::string keyboard_input[MAX_USER_KEYBOARD_INPUT] = { 0 };
+    std::string keyboard_input = { 0 };
+
     std::string command_message = "0번. 게시물 전체 조회\n"
                              "1번. 게시물 작성\n"
                              "2번. 게시물 읽기\n"
@@ -53,9 +54,9 @@ int console_window::user_choice_number_for_board_command()
                              "4번. 게시물 삭제\n"
                              "5번. 종료\n";
     user_keyboard_input _userKeyboardInput;
-    _userKeyboardInput.get_user_keyboard_input_with_message(&command_message, keyboard_input);
+    _userKeyboardInput.get_user_keyboard_input_with_message(command_message, keyboard_input);
 
-    return atoi(keyboard_input->c_str());
+    return atoi(keyboard_input.c_str());
 }
 
 console_window::console_window() {
