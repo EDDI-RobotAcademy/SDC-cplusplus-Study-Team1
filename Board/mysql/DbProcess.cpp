@@ -26,6 +26,13 @@ bool DbProcess::insertData() {
     return (mysql_query(conn, insertQuery.c_str()) == 0);
 }
 
+bool DbProcess::insertDataAccount() {
+    std::string insertQuery = "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
+                               ('테스트 아이디', '테스트 비밀번호', now(6), now(6))";
+
+    return (mysql_query(conn, insertQuery.c_str()) == 0);
+}
+
 bool DbProcess::updateData(int boardId, const std::string& newTitle, const std::string& newContent) {
     std::string updateQuery = "UPDATE board SET title = '" + newTitle +
                               "', content = '" + newContent +
