@@ -11,10 +11,10 @@ int main() {
 
 //    BoardRepository *boardRepository = new BoardRepositoryImpl();
 //    BoardService* boardService = new BoardServiceImpl();
-    auto boardRepository = std::make_shared<BoardRepositoryImpl>();
+/*    auto boardRepository = std::make_shared<BoardRepositoryImpl>();
     auto boardService = std::make_shared<BoardServiceImpl>(boardRepository);
     auto boardController = std::make_shared<BoardController>(boardService);
-    boardController->boardList();
+    boardController->boardList();*/
 
     console_window _console_window;
     std::make_shared<UiServiceCreateHandler>();
