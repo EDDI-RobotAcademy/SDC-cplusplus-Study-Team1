@@ -37,6 +37,10 @@ add_executable(class_test main.cpp
         ui/console/window/console_window.h
         ui/console/user_keyboard/user_keyboard_input.cpp
         ui/console/user_keyboard/user_keyboard_input.h
+        account/service/response/AccountResponse.cpp
+        account/service/response/AccountResponse.h
+        account/service/request/AccountRequest.cpp
+        account/service/request/AccountRequest.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
