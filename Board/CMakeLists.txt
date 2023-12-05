@@ -54,6 +54,10 @@ add_executable(class_test main.cpp
         account/repository/AccountRepository.h
         account/service/AccountServiceImpl.cpp
         account/service/AccountServiceImpl.h
+        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.cpp
+        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.h
+        ui/console/service/response/UiResponse.cpp
+        ui/console/service/response/UiResponse.h
 
 )
 
