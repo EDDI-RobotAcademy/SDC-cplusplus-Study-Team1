@@ -4,8 +4,10 @@
 
 #include "DbProcess.h"
 #include <iostream>
+#include <memory>
+DbProcess* DbProcess::instance = nullptr;
 
-DbProcess::DbProcess(const char *host, const char *user,const char* pass, const char* dbName)
+DbProcess::DbProcess(const char* host, const char* user, const char* pass, const char* dbName)
         : conn(nullptr), DB_HOST(host), DB_USER(user), DB_PASS(pass), DB_NAME(dbName) {}
 
 DbProcess::~DbProcess() {
@@ -13,6 +15,21 @@ DbProcess::~DbProcess() {
         mysql_close(conn);
     }
 }
+
+DbProcess* DbProcess::getInstance() {
+    return instance;
+}
+
+
+
+DbProcess* DbProcess::getInstance(const char* host, const char* user, const char* pass, const char* dbName) {
+    if (instance == nullptr) {
+        instance = new DbProcess(host, user, pass, dbName);
+    }
+    return instance;
+}
+
+
 
 bool DbProcess::connect() {
     conn = mysql_init(nullptr);
@@ -101,7 +118,15 @@ void DbProcess::readData(int boardId) {
         std::cerr << "mysql_query() failed" << std::endl;
     }
 }
+DbProcess* DbProcess::getInstance() {
 
+    const char* DB_HOST = "localhost";
+    const char* DB_USER = "eddi";
+    const char* DB_PASS = "eddi@123";
+    const char* DB_NAME = "test_db";
+
+    return new DbProcess::db(DB_HOST, DB_USER, DB_PASS,DB_NAME);
+}
 MYSQL *DbProcess::getConn()
 {
     return conn;

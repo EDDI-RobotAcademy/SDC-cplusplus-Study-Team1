@@ -14,7 +14,7 @@ public:
 
 
     ~DbProcess();
-
+    static DbProcess* getInstance();
     bool connect();
     bool insertData(const std::string& queryString);
 
@@ -22,6 +22,7 @@ public:
     bool deleteData(int boardId);
     void selectData();
     void readData(int boardId);
+
 
     MYSQL *getConn();
 
@@ -35,10 +36,10 @@ private:
     const char* DB_USER;
     const char* DB_PASS;
     const char* DB_NAME;
+    static DbProcess* instance;
 
 
-
-
+    DbProcess *getInstance(const char *host, const char *user, const char *pass, const char *dbName);
 };
 
 

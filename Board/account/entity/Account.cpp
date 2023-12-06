@@ -4,7 +4,7 @@
 // Created by eddi on 23. 12. 4.
 //
 #include "Account.h"
-
+Account::Account() {}
 Account::Account(int id, const std::string& account_id,std::string& password)
         : id(id),
           account_id(account_id),
@@ -29,4 +29,15 @@ void Account::printAccountInfo() const {
               << ", password: " << password
               << ", Created At: " << std::chrono::system_clock::to_time_t(created_at)
               << ", Updated At: " << std::chrono::system_clock::to_time_t(updated_at) << std::endl;
+
+}
+std::string Account:: get_account_id()
+{
+    account_id="nnn";
+    return account_id;
+}
+std::string Account:: get_password()
+{
+    password="qrewteg";
+    return password;
 }
