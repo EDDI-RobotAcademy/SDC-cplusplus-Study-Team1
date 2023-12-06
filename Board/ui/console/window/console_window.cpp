@@ -12,6 +12,8 @@
 #include "../user_keyboard/user_keyboard_input.h"
 #include "../service/handler/create/UiServiceCreateHandler.h"
 #include "../service/handler/exit/UiServiceExitHandler.h"
+#include "../service/UiService.h"
+#include "../service/UiServiceImpl.h"
 
 #include <string>
 #include <iostream>
@@ -32,19 +34,12 @@ void console_window::start_console_ui_window()
     auto boardController = std::make_shared<BoardController>(boardService);
     boardController->boardList();
 
+    auto uiService = std::make_shared<UiServiceImpl>();
+
     while (!player_enter_quit)
     {
         user_choice_command_number = user_choice_number_for_board_command();
-        if(user_choice_command_number == 1)
-        {
-            UiServiceExitHandler _uiServiceExitHandler;
-
-        }
-        if(user_choice_command_number == 5)
-        {
-            UiServiceExitHandler _uiServiceExitHandler;
-
-        }
+        uiService->exit();
     }
 }
 

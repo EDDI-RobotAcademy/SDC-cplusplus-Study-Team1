@@ -61,6 +61,9 @@ add_executable(class_test main.cpp
         ui/console/service/UiAccount/UiAccountImpl.cpp
         ui/console/service/UiAccount/UiAccountImpl.h
         ui/console/service/UiAccount/UiAccount.h
+        ui/console/service/UiServiceImpl.cpp
+        ui/console/service/UiServiceImpl.h
+        ui/console/service/UiService.h
 
 )
 
