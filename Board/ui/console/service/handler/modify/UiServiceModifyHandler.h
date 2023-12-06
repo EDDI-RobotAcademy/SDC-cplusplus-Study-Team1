@@ -5,12 +5,6 @@
 #ifndef CLASS_TEST_UISERVICEMODIFYHANDLER_H
 #define CLASS_TEST_UISERVICEMODIFYHANDLER_H
 
-class UiServiceModifyHandler {
-private:
 
-public:
-    UiServiceModifyHandler();
-    ~UiServiceModifyHandler();
-};
 
 #endif //CLASS_TEST_UISERVICEMODIFYHANDLER_H

@@ -5,8 +5,8 @@
 #include <iostream>
 #include "UiServiceRemoveHandler.h"
 
-UiServiceRemoveHandler::UiServiceRemoveHandler () {
-    std::cout << "UiServiceRemoveHandler 함수 호출 확인" << std::endl;
-}
-
-UiServiceRemoveHandler::~UiServiceRemoveHandler() { }
+//UiServiceRemoveHandler::UiServiceRemoveHandler () {
+//    std::cout << "UiServiceRemoveHandler 함수 호출 확인" << std::endl;
+//}
+//
+//UiServiceRemoveHandler::~UiServiceRemoveHandler() { }
