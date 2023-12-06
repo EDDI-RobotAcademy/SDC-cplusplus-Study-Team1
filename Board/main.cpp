@@ -21,14 +21,16 @@ int main() {
     auto boardController = std::make_shared<BoardController>(boardService);
     boardController->boardList();*/
 
-//    account테이블 실행 확인용
-//    auto accountRepository = std::make_shared<AccountRepositoryImpl>();
-//    auto accountService = std::make_shared<AccountServiceImpl>(accountRepository);
-//    auto accountController = std::make_shared<AccountController>(accountService);
-//    accountController->accountlist();
+    //account테이블 실행 확인용
+    auto accountRepository = std::make_shared<AccountRepositoryImpl>();
+    auto accountService = std::make_shared<AccountServiceImpl>(accountRepository);
+    auto accountController = std::make_shared<AccountController>(accountService);
+   accountController->accountreg();
+    //accountController->accountlogin();
+
 
     console_window _console_window;
-//    std::make_shared<UiServiceCreateHandler>();
+    //std::make_shared<UiServiceCreateHandler>();
     _console_window.start_console_ui_window();
     return 0;
 }

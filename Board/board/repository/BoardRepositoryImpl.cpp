@@ -53,7 +53,7 @@ std::vector<Board> BoardRepositoryImpl::findAll()
     const char* DB_PASS = "eddi@123";
     const char* DB_NAME = "test_db";
 
-    DbProcess db(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    DbProcess db(DB_HOST, DB_USER, DB_PASS,DB_NAME);
 
     if (!db.connect()) {
         std::cerr << "Connection error" << std::endl;

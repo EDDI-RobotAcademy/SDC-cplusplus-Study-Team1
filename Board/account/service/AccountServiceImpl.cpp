@@ -7,10 +7,19 @@
 
 AccountServiceImpl::AccountServiceImpl(std::shared_ptr<AccountRepository> accountRepository) : accountRepository(accountRepository) { }
 
-std::vector<AccountResponse> AccountServiceImpl::accountlist() {
-    std::cout << "AccountService: 리스트 출력!" << std::endl;
+std::vector<AccountResponse> AccountServiceImpl::acregister()
+{
+    std::cout << "어카운트서비스임플 회원가입 " << std::endl;
 
-    accountRepository->findAll();
+    accountRepository->regsave();
+
+    return std::vector<AccountResponse>();
+}
+std::vector<AccountResponse> AccountServiceImpl::aclogin()
+{
+    std::cout << "어카운트서비스임플 로그인 " << std::endl;
+
+    accountRepository->loginsave();
 
     return std::vector<AccountResponse>();
 }

@@ -12,7 +12,8 @@
 class AccountRepositoryImpl : public AccountRepository {
 
 public:
-    std::vector<Account> findAll() override;
+    std::vector<Account> regsave() override;
+    std::vector<Account> loginsave() override;
 };
 
 

@@ -10,12 +10,14 @@
 
 class DbProcess {
 public:
-    DbProcess(const char* host, const char* user, const char* pass, const char* dbName);
+    DbProcess(const char *host, const char *user,const char*pass,const char* dbName);
+
+
     ~DbProcess();
 
     bool connect();
-    bool insertData();
-    bool insertDataAccount();
+    bool insertData(const std::string& queryString);
+
     bool updateData(int boardId, const std::string& newTitle, const std::string& newContent);
     bool deleteData(int boardId);
     void selectData();
@@ -23,12 +25,20 @@ public:
 
     MYSQL *getConn();
 
+
+
+
+
 private:
     MYSQL* conn;
     const char* DB_HOST;
     const char* DB_USER;
     const char* DB_PASS;
     const char* DB_NAME;
+
+
+
+
 };
 
 
