@@ -20,11 +20,9 @@ public:
     AccountController(std::shared_ptr<AccountService> accountService);
     //explicit BoardController(BoardService* service) : boardService(service) { }
 
-    std::vector<AccountResponse> accountlist();
-//    std::vector<BoardResponse> boardCreate() = 0;
-//    std::vector<BoardResponse> boardRead() = 0;
-//    std::vector<BoardResponse> boardModify() = 0;
-//    void boardRemove() = 0;
+    std::vector<AccountResponse> accountreg();
+    std::vector<AccountResponse> accountlogin();
+
 };
 
 

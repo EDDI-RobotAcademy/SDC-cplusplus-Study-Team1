@@ -13,7 +13,8 @@ public:
     //virtual (가상 함수) => dummy 개념으로 활용 존재하지만 존재하지않은 것;
     virtual ~AccountService() = default;
     // BoardResponse 다발을 리턴하는 list 함수를 만들 예정! c에서 함수 포인터 테이블 과 같은 개
-    virtual std::vector<AccountResponse> accountlist() = 0;
+    virtual std::vector<AccountResponse> acregister() = 0;
+    virtual std::vector<AccountResponse> aclogin() = 0;
 //    virtual std::vector<BoardResponse> create() = 0;
 //    virtual std::vector<BoardResponse> read() = 0;
 //    virtual std::vector<BoardResponse> modify() = 0;

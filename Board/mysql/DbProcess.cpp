@@ -5,7 +5,7 @@
 #include "DbProcess.h"
 #include <iostream>
 
-DbProcess::DbProcess(const char* host, const char* user, const char* pass, const char* dbName)
+DbProcess::DbProcess(const char *host, const char *user,const char* pass, const char* dbName)
         : conn(nullptr), DB_HOST(host), DB_USER(user), DB_PASS(pass), DB_NAME(dbName) {}
 
 DbProcess::~DbProcess() {
@@ -19,19 +19,27 @@ bool DbProcess::connect() {
     return (mysql_real_connect(conn, DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306, nullptr, 0) != nullptr);
 }
 
-bool DbProcess::insertData() {
-    std::string insertQuery = "INSERT INTO board (content, title, writer, reg_date, upd_date) VALUES \
-                               ('테스트 내용', '테스트 제목', '테스트 작성자', now(6), now(6))";
+bool DbProcess::insertData(const std::string& queryString) {
+
+    std::string insertQuery;
+
+
+//    insertQuery = "INSERT INTO board (content, title, writer, reg_date, upd_date) VALUES \
+//                               ('테스트 내용', '테스트 제목', '테스트 작성자', now(6), now(6))";
+
+    insertQuery =  "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
+                               (userid, password, now(6), now(6))";
 
     return (mysql_query(conn, insertQuery.c_str()) == 0);
 }
 
-bool DbProcess::insertDataAccount() {
-    std::string insertQuery = "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
-                               ('테스트 아이디', '테스트 비밀번호', now(6), now(6))";
+//bool DbProcess::insertDataAccount(const std::string& queryString) {
+//
+//    std::string accountInsertQuery =  "INSERT INTO board (userid, userpassword, reg_date, upd_date) VALUES \
+//                               (userid, userpassword, now(6), now(6))";
+//    return (mysql_query(conn, queryString.c_str()) == 0);
+//}
 
-    return (mysql_query(conn, insertQuery.c_str()) == 0);
-}
 
 bool DbProcess::updateData(int boardId, const std::string& newTitle, const std::string& newContent) {
     std::string updateQuery = "UPDATE board SET title = '" + newTitle +

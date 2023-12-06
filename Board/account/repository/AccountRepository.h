@@ -9,9 +9,13 @@
 #include "../entity/Account.h"
 
 class AccountRepository {
+    std::string id;
+    std::string pw;
 public:
     virtual ~AccountRepository() = default;
-    virtual std::vector<Account> findAll() = 0;
+    virtual std::vector<Account> regsave() = 0;
+    virtual std::vector<Account> loginsave() = 0;
 };
+
 
 #endif //CLASS_TEST_ACCOUNTREPOSITORY_H

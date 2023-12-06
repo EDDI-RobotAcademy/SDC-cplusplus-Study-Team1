@@ -18,7 +18,8 @@ private:
 
 public:
     AccountServiceImpl(std::shared_ptr<AccountRepository> accountRepository);
-    std::vector<AccountResponse> accountlist() override;
+    std::vector<AccountResponse> acregister() override;
+    std::vector<AccountResponse> aclogin() override;
 };
 
 

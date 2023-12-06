@@ -9,11 +9,19 @@
 
 AccountController::AccountController(std::shared_ptr<AccountService> accountService) : accountService(accountService) { }
 
-std::vector<AccountResponse> AccountController::accountlist()
+std::vector<AccountResponse> AccountController::accountreg()
 {
-    std::cout << "AccountController: 게시물 리스트 출력!" << std::endl;
+    std::cout << "AccountController: 어카운트 서비스로감 회원가입" << std::endl;
 
-    accountService->accountlist();
+    accountService->acregister();
+
+    return std::vector<AccountResponse>();
+}
+std::vector<AccountResponse> AccountController::accountlogin()
+{
+    std::cout << "AccountController: 어카운트서비스로감 로그인" << std::endl;
+
+    accountService->aclogin();
 
     return std::vector<AccountResponse>();
 }
