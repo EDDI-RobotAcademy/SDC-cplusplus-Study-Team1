@@ -20,9 +20,7 @@ public:
 
 class UiServiceCreateHandler {
 private:
-    std::string title;
-    std::string writer;
-    std::string content;
+
 public:
     UiServiceCreateHandler();
 //    std::string getTitle();
@@ -30,6 +28,38 @@ public:
 //    std::string getContent();
     void getCreatPost();
     ~UiServiceCreateHandler();
+};
+
+class UiServiceExitHandler {
+private:
+
+public:
+    UiServiceExitHandler();
+    ~UiServiceExitHandler();
+};
+
+class UiServiceModifyHandler {
+private:
+
+public:
+    UiServiceModifyHandler();
+    ~UiServiceModifyHandler();
+};
+
+class UiServiceReadHandler {
+private:
+
+public:
+    UiServiceReadHandler();
+    ~UiServiceReadHandler();
+};
+
+class UiServiceRemoveHandler {
+private:
+
+public:
+    UiServiceRemoveHandler();
+    ~UiServiceRemoveHandler();
 };
 
 #endif //CLASS_TEST_UIBOARDIMPL_H

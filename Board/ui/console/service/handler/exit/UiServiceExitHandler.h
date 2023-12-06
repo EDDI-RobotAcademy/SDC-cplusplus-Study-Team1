@@ -5,12 +5,6 @@
 #ifndef CLASS_TEST_UISERVICEEXITHANDLER_H
 #define CLASS_TEST_UISERVICEEXITHANDLER_H
 
-class UiServiceExitHandler {
-private:
 
-public:
-    UiServiceExitHandler();
-    ~UiServiceExitHandler();
-};
 
 #endif //CLASS_TEST_UISERVICEEXITHANDLER_H

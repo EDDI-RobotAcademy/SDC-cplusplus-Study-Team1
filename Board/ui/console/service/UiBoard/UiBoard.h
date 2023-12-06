@@ -7,10 +7,6 @@
 
 #include <vector>
 #include "../response/UiResponse.h"
-#include "../handler/exit/UiServiceExitHandler.h"
-#include "../handler/modify/UiServiceModifyHandler.h"
-#include "../handler/read/UiServiceReadHandler.h"
-#include "../handler/remove/UiServiceRemoveHandler.h"
 #include "../../../../board/service/response/BoardResponse.h"
 
 class UiBoard {

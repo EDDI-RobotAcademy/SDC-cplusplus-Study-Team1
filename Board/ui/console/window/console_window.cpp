@@ -14,6 +14,7 @@
 #include "../service/handler/exit/UiServiceExitHandler.h"
 #include "../service/UiService.h"
 #include "../service/UiServiceImpl.h"
+#include "../service/UiBoard/UiBoardImpl.h"
 
 #include <string>
 #include <iostream>
@@ -35,6 +36,10 @@ void console_window::start_console_ui_window()
     boardController->boardList();
 
     auto uiService = std::make_shared<UiServiceImpl>();
+
+    // UiBoardImpl 포인터 ( ui / console / UiBoard ) - 추후 사용을 위해 기입함(불필요 시 삭제)
+    // 사용 예시 ) uiBoard->UiServiceCreateHandler();
+    auto uiBoard = std::make_shared<UiBoardImpl>();
 
     while (!player_enter_quit)
     {
