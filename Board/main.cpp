@@ -17,7 +17,7 @@ int main() {
     boardController->boardList();*/
 
     console_window _console_window;
-    std::make_shared<UiServiceCreateHandler>();
+//    std::make_shared<UiServiceCreateHandler>();
     _console_window.start_console_ui_window();
     return 0;
 }
