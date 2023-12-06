@@ -17,9 +17,12 @@ private:
     std::chrono::system_clock::time_point updated_at;
 
 public:
+    Account();
     Account(int id, const std::string& account_id,std::string& password);
-    Account(int id, const std::string& account_id, const std::string& password,
-                     const std::string& reg_date, const std::string& upd_date);
+//    Account(int id, const std::string& account_id, const std::string& password,
+//                     const std::string& reg_date, const std::string& upd_date);
+    std::string get_account_id();
+    std::string get_password();
 
     void printAccountInfo() const;
 };

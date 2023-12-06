@@ -68,17 +68,25 @@ std::vector<Account> AccountRepositoryImpl::regsave()
         std::cerr << "Connection error" << std::endl;
     }
     // mysql 접속완료
-//    user_keyboard_input inputhandler;
-//    Account account()
-//    inputhandler.get_user_keyboard_input();
 
-    std::string userid="iiiii";
-    std::string userpassword="ppppp";
+//    std::string userid="iiiii";
+//    std::string userpassword="ppppp";
+    Account *account = new Account(); //동적할당해서 account포인터객체 생성?
+    DbProcess* dbInstance = DbProcess::getInstance();
+    std::string accountId = account->get_account_id();
+    std::string password = account->get_password();
 
-  std::string accountInsertQuery =  "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
-                               (userid, password, now(6), now(6))";
+    std::string queryString = "INSERT INTO account (account_id, password) VALUES \
+                      ('" + accountId + "', '" + password + "' )";
 
-    db.insertData(accountInsertQuery);
+    dbInstance->insertData(queryString);
+    delete account;
+
+
+//  std::string accountInsertQuery =  "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
+//                               (userid, password, now(6), now(6))";
+//
+//    db.insertData(accountInsertQuery);
 
 
 
