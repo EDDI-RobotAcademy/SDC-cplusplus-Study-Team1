@@ -11,9 +11,22 @@
 #include "account/service/AccountServiceImpl.h"
 #include "account/repository/AccountRepository.h"
 #include "account/repository/AccountRepositoryImpl.h"
+#include "mysql/DbProcess.h"
+
+
+void i_dont_know_name()
+{
+    // mysql 접속시작
+    const char* DB_HOST = "localhost";
+    const char* DB_USER = "eddi";
+    const char* DB_PASS = "eddi@123";
+    const char* DB_NAME = "test_db";
+
+    DbProcess* dbInstance = DbProcess::getInstance(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+}
 
 int main() {
-
+    i_dont_know_name();
 //    BoardRepository *boardRepository = new BoardRepositoryImpl();
 //    BoardService* boardService = new BoardServiceImpl();
 /*    auto boardRepository = std::make_shared<BoardRepositoryImpl>();

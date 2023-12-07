@@ -13,25 +13,19 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
 //    std::string insertQuery = "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
 //                               ('테스트qwer', '테스트ffff', now(6), now(6))";
 
-
-
     const std::string& selectQuery = "SELECT * FROM account";
-
 
     //mysql_query로 select가 실행됨
     if (mysql_query(conn, selectQuery.c_str()) == 0) {
-        // resulr에 결과값이 저장됨
+        // result에 결과값이 저장됨
         MYSQL_RES* result = mysql_store_result(conn);
         if (result == nullptr) {
             std::cerr << "mysql_store_result() failed" << std::endl;
             return accountList;
         }
 
-
-
         MYSQL_ROW row;
         // 루프를 돌면서 Board 객체를 만듬
-        // 루프를 행 단위로 동작하므로 총 4번 루프를 돌게
         while ((row = mysql_fetch_row(result)) != nullptr) {
             Account account(
                     std::stoi(row[0]),        // id
@@ -42,7 +36,7 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
             );
 
             accountList.push_back(account);
-            // accountList.라는 동적배열에 할당함 위의 내용을
+            // 위의 내용을 accountList.라는 동적 배열에 할당함
         }
 
         mysql_free_result(result);
@@ -53,19 +47,21 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
     return accountList;
 }
 
+
+// 회원 정보 저장
 std::vector<Account> AccountRepositoryImpl::regsave()
 {
-    std::cout << "AccountReopository:입력받은 회원정보저장!" << std::endl;
-    // mysql 접속시작
+    std::cout << "AccountReopository: 입력받은 회원정보 저장!" << std::endl;
 
-    // mysql 접속완료
+    Account *account = new Account(); //동적 할당 account 포인터 객체 생성
 
-
-    Account *account = new Account(); //동적할당해서 account포인터객체 생성?
     DbProcess* dbInstance = DbProcess::getInstance();
+
+    // 아이디, 비번 받아오는 걸로 수정해야 하는디~
     std::string accountId = "iiiii";
     std::string password = "ppppp";
 
+    // 아이디랑 비번 테이블에 넣을 것이여~
     std::string queryString = "INSERT INTO account (account_id, password) VALUES \
                       ('" + accountId + "', '" + password + "' )";
 
@@ -74,14 +70,16 @@ std::vector<Account> AccountRepositoryImpl::regsave()
 
     std::vector<Account> accountList = accountfetchResults(dbInstance->getConn()); // db.getConn -> 저장된 데이터 불러오기
 
-    delete dbInstance;
-    //처리 결과 학인하는 부분
+    //처리 결과 확인하는 부분(아이디와 비밀번호 잘 저장되었는지 출력)
     for (const auto& account : accountList) {
         account.printAccountInfo();
     }
 
     return accountList;
 }
+
+
+// 로그인
 std::vector<Account> AccountRepositoryImpl::loginsave()
 {
 //    std::cout << "AccountReopository: 로그인완료!" << std::endl;

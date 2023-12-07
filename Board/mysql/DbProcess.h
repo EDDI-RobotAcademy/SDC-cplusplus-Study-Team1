@@ -11,10 +11,11 @@
 class DbProcess {
 public:
     DbProcess(const char *host, const char *user,const char*pass,const char* dbName);
-
-
     ~DbProcess();
+
+    static DbProcess* getInstance(const char* host, const char* user, const char*pass, const char* dbName);
     static DbProcess* getInstance();
+
     bool connect();
     bool insertData(const std::string& queryString);
 

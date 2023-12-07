@@ -11,7 +11,7 @@ AccountController::AccountController(std::shared_ptr<AccountService> accountServ
 
 std::vector<AccountResponse> AccountController::accountreg()
 {
-    std::cout << "AccountController: 어카운트 서비스로감 회원가입" << std::endl;
+    std::cout << "AccountController: 회원가입 서비스로 이동!" << std::endl;
 
     accountService->acregister();
 
@@ -19,7 +19,7 @@ std::vector<AccountResponse> AccountController::accountreg()
 }
 std::vector<AccountResponse> AccountController::accountlogin()
 {
-    std::cout << "AccountController: 어카운트서비스로감 로그인" << std::endl;
+    std::cout << "AccountController: 로그인 서비스로 이동!" << std::endl;
 
     accountService->aclogin();
 
