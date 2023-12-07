@@ -13,6 +13,7 @@ class AccountRepositoryImpl : public AccountRepository {
 
 public:
     std::vector<Account> regsave() override;
+    //std::vector<Account> AccountIDcheck() override;
     std::vector<Account> loginsave() override;
 };
 
