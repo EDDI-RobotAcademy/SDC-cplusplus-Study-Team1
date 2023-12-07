@@ -57,24 +57,14 @@ std::vector<Account> AccountRepositoryImpl::regsave()
 {
     std::cout << "AccountReopository:입력받은 회원정보저장!" << std::endl;
     // mysql 접속시작
-    const char* DB_HOST = "localhost";
-    const char* DB_USER = "eddi";
-    const char* DB_PASS = "eddi@123";
-    const char* DB_NAME = "test_db";
 
-    DbProcess db(DB_HOST, DB_USER,DB_PASS,DB_NAME);
-
-    if (!db.connect()) {
-        std::cerr << "Connection error" << std::endl;
-    }
     // mysql 접속완료
 
-//    std::string userid="iiiii";
-//    std::string userpassword="ppppp";
+
     Account *account = new Account(); //동적할당해서 account포인터객체 생성?
     DbProcess* dbInstance = DbProcess::getInstance();
-    std::string accountId = account->get_account_id();
-    std::string password = account->get_password();
+    std::string accountId = "iiiii";
+    std::string password = "ppppp";
 
     std::string queryString = "INSERT INTO account (account_id, password) VALUES \
                       ('" + accountId + "', '" + password + "' )";
@@ -82,16 +72,9 @@ std::vector<Account> AccountRepositoryImpl::regsave()
     dbInstance->insertData(queryString);
     delete account;
 
+    std::vector<Account> accountList = accountfetchResults(dbInstance->getConn()); // db.getConn -> 저장된 데이터 불러오기
 
-//  std::string accountInsertQuery =  "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
-//                               (userid, password, now(6), now(6))";
-//
-//    db.insertData(accountInsertQuery);
-
-
-
-    std::vector<Account> accountList = accountfetchResults(db.getConn()); // db.getConn -> 저장된 데이터 불러오기
-
+    delete dbInstance;
     //처리 결과 학인하는 부분
     for (const auto& account : accountList) {
         account.printAccountInfo();

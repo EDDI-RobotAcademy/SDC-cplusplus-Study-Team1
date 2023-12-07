@@ -27,9 +27,6 @@ public:
     MYSQL *getConn();
 
 
-
-
-
 private:
     MYSQL* conn;
     const char* DB_HOST;
@@ -37,9 +34,6 @@ private:
     const char* DB_PASS;
     const char* DB_NAME;
     static DbProcess* instance;
-
-
-    DbProcess *getInstance(const char *host, const char *user, const char *pass, const char *dbName);
 };
 
 

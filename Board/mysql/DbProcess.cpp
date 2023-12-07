@@ -16,19 +16,6 @@ DbProcess::~DbProcess() {
     }
 }
 
-DbProcess* DbProcess::getInstance() {
-    return instance;
-}
-
-
-
-DbProcess* DbProcess::getInstance(const char* host, const char* user, const char* pass, const char* dbName) {
-    if (instance == nullptr) {
-        instance = new DbProcess(host, user, pass, dbName);
-    }
-    return instance;
-}
-
 
 
 bool DbProcess::connect() {
@@ -40,23 +27,10 @@ bool DbProcess::insertData(const std::string& queryString) {
 
     std::string insertQuery;
 
-
-//    insertQuery = "INSERT INTO board (content, title, writer, reg_date, upd_date) VALUES \
-//                               ('테스트 내용', '테스트 제목', '테스트 작성자', now(6), now(6))";
-
-    insertQuery =  "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
-                               (userid, password, now(6), now(6))";
+    insertQuery = queryString;
 
     return (mysql_query(conn, insertQuery.c_str()) == 0);
 }
-
-//bool DbProcess::insertDataAccount(const std::string& queryString) {
-//
-//    std::string accountInsertQuery =  "INSERT INTO board (userid, userpassword, reg_date, upd_date) VALUES \
-//                               (userid, userpassword, now(6), now(6))";
-//    return (mysql_query(conn, queryString.c_str()) == 0);
-//}
-
 
 bool DbProcess::updateData(int boardId, const std::string& newTitle, const std::string& newContent) {
     std::string updateQuery = "UPDATE board SET title = '" + newTitle +
@@ -118,15 +92,25 @@ void DbProcess::readData(int boardId) {
         std::cerr << "mysql_query() failed" << std::endl;
     }
 }
-DbProcess* DbProcess::getInstance() {
 
+ DbProcess* DbProcess::getInstance() {
+
+    std::cout<<"출력"<<std::endl;
     const char* DB_HOST = "localhost";
     const char* DB_USER = "eddi";
     const char* DB_PASS = "eddi@123";
     const char* DB_NAME = "test_db";
 
-    return new DbProcess::db(DB_HOST, DB_USER, DB_PASS,DB_NAME);
+    if(instance == nullptr) {
+        instance = new DbProcess(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        if (!instance->connect()) {
+            std::cerr << "Connection error" << std::endl;
+        }
+    }
+    return instance;
 }
+
 MYSQL *DbProcess::getConn()
 {
     return conn;
