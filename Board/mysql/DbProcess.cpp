@@ -5,6 +5,7 @@
 #include "DbProcess.h"
 #include <iostream>
 #include <memory>
+
 DbProcess* DbProcess::instance = nullptr;
 
 DbProcess::DbProcess(const char* host, const char* user, const char* pass, const char* dbName)
@@ -15,7 +16,6 @@ DbProcess::~DbProcess() {
         mysql_close(conn);
     }
 }
-
 
 
 bool DbProcess::connect() {
@@ -93,21 +93,21 @@ void DbProcess::readData(int boardId) {
     }
 }
 
- DbProcess* DbProcess::getInstance() {
-
-    std::cout<<"출력"<<std::endl;
-    const char* DB_HOST = "localhost";
-    const char* DB_USER = "eddi";
-    const char* DB_PASS = "eddi@123";
-    const char* DB_NAME = "test_db";
+ DbProcess* DbProcess::getInstance(const char* host, const char* user, const char* pass, const char* dbName) {
 
     if(instance == nullptr) {
-        instance = new DbProcess(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if (!instance->connect()) {
-            std::cerr << "Connection error" << std::endl;
+        instance = new DbProcess(host, user,pass, dbName);
+        if(!(instance->connect()))
+        {
+            std::cout << "연결이 안됩니다." << std::endl;
         }
+
     }
+    return instance;
+}
+
+DbProcess* DbProcess::getInstance()
+{
     return instance;
 }
 
