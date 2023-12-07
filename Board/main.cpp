@@ -5,7 +5,6 @@
 #include "board/repository/BoardRepository.h"
 #include "board/repository/BoardRepositoryImpl.h"
 #include "ui/console/window/console_window.h"
-#include "ui/console/service/handler/create/UiServiceCreateHandler.h"
 
 #include "account/controller/AccountController.h"
 #include "account/service/AccountServiceImpl.h"

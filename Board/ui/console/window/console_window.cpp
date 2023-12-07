@@ -10,11 +10,10 @@
 #include "../../../board/repository/BoardRepository.h"
 #include "../../../board/repository/BoardRepositoryImpl.h"
 #include "../user_keyboard/user_keyboard_input.h"
-#include "../service/handler/create/UiServiceCreateHandler.h"
-#include "../service/handler/exit/UiServiceExitHandler.h"
 #include "../service/UiService.h"
 #include "../service/UiServiceImpl.h"
 #include "../service/UiBoard/UiBoardImpl.h"
+#include "../service/UiAccount/UiAccountImpl.h"
 
 #include <string>
 #include <iostream>
@@ -35,16 +34,18 @@ void console_window::start_console_ui_window()
     auto boardController = std::make_shared<BoardController>(boardService);
     boardController->boardList();
 
-    auto uiService = std::make_shared<UiServiceImpl>();
+    auto uiAccount = std::make_shared<UiAccountImpl>();
+    auto uiBoard = std::make_shared<UiBoardImpl>();
+    auto uiService = std::make_shared<UiServiceImpl>(uiAccount, uiBoard);
+
 
     // UiBoardImpl 포인터 ( ui / console / UiBoard ) - 추후 사용을 위해 기입함(불필요 시 삭제)
     // 사용 예시 ) uiBoard->UiServiceCreateHandler();
-    auto uiBoard = std::make_shared<UiBoardImpl>();
 
     while (!player_enter_quit)
     {
         user_choice_command_number = user_choice_number_for_board_command();
-        uiService->exit();
+        uiService->accountExit();
     }
 
 
