@@ -46,6 +46,8 @@ void console_window::start_console_ui_window()
         user_choice_command_number = user_choice_number_for_board_command();
         uiService->exit();
     }
+
+
 }
 
 int console_window::user_choice_number_for_board_command()

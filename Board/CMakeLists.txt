@@ -64,6 +64,9 @@ add_executable(class_test main.cpp
         ui/console/service/UiServiceImpl.cpp
         ui/console/service/UiServiceImpl.h
         ui/console/service/UiService.h
+        ui/console/service/UiServiceTable.cpp
+        ui/console/service/UiServiceTable.h
+        ui/console/service/UiServiceTableMapper.h
 
 )
 
