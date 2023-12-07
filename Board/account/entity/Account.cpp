@@ -33,11 +33,9 @@ void Account::printAccountInfo() const {
 }
 std::string Account:: get_account_id()
 {
-    account_id="nnn";
     return account_id;
 }
 std::string Account:: get_password()
 {
-    password="qrewteg";
     return password;
 }
