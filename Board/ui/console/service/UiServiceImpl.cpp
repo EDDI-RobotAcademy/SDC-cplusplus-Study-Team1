@@ -4,19 +4,77 @@
 
 #include <iostream>
 #include "UiServiceImpl.h"
+#include "UiAccount/UiAccount.h"
 
 
-/*
-std::vector<UiResponse> UiServiceImpl::list() {
-    std::cout << "UiService: Board 리스트 출력!" << std::endl;
+UiServiceImpl::UiServiceImpl(std::shared_ptr<UiAccount> uiAccount,std::shared_ptr<UiBoard> uiBoard) : uiAccount(uiAccount), uiBoard(uiBoard) { }
+
+
+std::vector<UiResponse> UiServiceImpl::accountExit() {
+    std::cout << "게시판을 종료합니다." << std::endl;
+
+    uiAccount->UiServiceExitHandler();
+
+    return std::vector<UiResponse>();
+}
+
+UiServiceImpl::~UiServiceImpl() {
+
+}
+
+std::vector<UiResponse> UiServiceImpl::login() {
+    std::cout << "로그인을 합니다." << std::endl;
+
+    uiAccount->UiServiceLoginHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::creatId() {
+    std::cout << "회원가입 합니다." << std::endl;
+
+    uiAccount->UiServiceCreateAccountHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::postCreat() {
+    std::cout << "게시물을 생성합니다." << std::endl;
+
+    uiBoard->UiServiceCreateHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::postRead() {
+    std::cout << "게시물을 읽어옵니다.." << std::endl;
+
+    uiBoard->UiServiceReadHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::postEdit() {
+    std::cout << "게시물을 수정합니다.." << std::endl;
+
+    uiBoard->UiServiceModifyHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::postRemove() {
+    std::cout << "게시물을 삭제합니다." << std::endl;
+
+    uiBoard->UiServiceRemoveHandler();
+
+    return std::vector<UiResponse>();
+}
+
+std::vector<UiResponse> UiServiceImpl::postExit() {
+    std::cout << "게시판을 종료합니." << std::endl;
 
     uiBoard->UiServiceExitHandler();
 
     return std::vector<UiResponse>();
 }
-*/
 
-void UiServiceImpl::exit() {
-    std::cout << "게시판을 종료합니다." << std::endl;
-    ::exit(0);
-}
