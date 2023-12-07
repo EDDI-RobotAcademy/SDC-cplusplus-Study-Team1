@@ -19,7 +19,7 @@ private:
     std::shared_ptr<UiBoard> uiBoard;
 
 public:
-    UiServiceImpl(std::shared_ptr<UiAccount> uiAccount,std::shared_ptr<UiBoard> uiBoard);
+    UiServiceImpl(std::shared_ptr<UiAccount> uiAccount, std::shared_ptr<UiBoard> uiBoard);
     std::vector<UiResponse> login() override;
     std::vector<UiResponse> creatId() override;
     std::vector<UiResponse> accountExit() override;
@@ -28,9 +28,6 @@ public:
     std::vector<UiResponse> postEdit() override;
     std::vector<UiResponse> postRemove() override;
     std::vector<UiResponse> postExit() override;
-
-    ~UiServiceImpl() override;
-
 };
 
 

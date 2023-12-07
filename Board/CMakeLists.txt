@@ -41,21 +41,9 @@ add_executable(class_test main.cpp
         ui/console/service/UiBoard/UiBoardImpl.cpp
         ui/console/service/UiBoard/UiBoardImpl.h
         ui/console/service/UiBoard/UiBoard.h
-        ui/console/service/handler/create/UiServiceCreateHandler.cpp
-        ui/console/service/handler/create/UiServiceCreateHandler.h
-        ui/console/service/handler/exit/UiServiceExitHandler.cpp
-        ui/console/service/handler/exit/UiServiceExitHandler.h
-        ui/console/service/handler/modify/UiServiceModifyHandler.cpp
-        ui/console/service/handler/modify/UiServiceModifyHandler.h
-        ui/console/service/handler/read/UiServiceReadHandler.cpp
-        ui/console/service/handler/read/UiServiceReadHandler.h
-        ui/console/service/handler/remove/UiServiceRemoveHandler.cpp
-        ui/console/service/handler/remove/UiServiceRemoveHandler.h
         account/repository/AccountRepository.h
         account/service/AccountServiceImpl.cpp
         account/service/AccountServiceImpl.h
-        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.cpp
-        ui/console/service/handler/create_account/UiServiceCreateAccountHandler.h
         ui/console/service/response/UiResponse.cpp
         ui/console/service/response/UiResponse.h
         ui/console/service/UiAccount/UiAccountImpl.cpp
@@ -64,9 +52,6 @@ add_executable(class_test main.cpp
         ui/console/service/UiServiceImpl.cpp
         ui/console/service/UiServiceImpl.h
         ui/console/service/UiService.h
-        ui/console/service/UiServiceTable.cpp
-        ui/console/service/UiServiceTable.h
-        ui/console/service/UiServiceTableMapper.h
 
 )
 

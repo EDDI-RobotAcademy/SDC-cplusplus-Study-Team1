@@ -22,11 +22,9 @@ std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
 
     std::cout <<"ID : "<< user << "비밀번호 : " <<password << std::endl; //확인용
 
-
     return boardResponses;
 
 }
-
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
 {
@@ -43,12 +41,8 @@ std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
 
     std::cout <<"ID : "<< create_user << "비밀번호 : " <<create_password << std::endl; //확인용
 
-
     return boardResponses;
-
-
 }
-
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceExitHandler()
 {

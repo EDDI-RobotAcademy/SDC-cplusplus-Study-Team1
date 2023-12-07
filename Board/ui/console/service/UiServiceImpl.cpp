@@ -10,16 +10,13 @@
 UiServiceImpl::UiServiceImpl(std::shared_ptr<UiAccount> uiAccount,std::shared_ptr<UiBoard> uiBoard) : uiAccount(uiAccount), uiBoard(uiBoard) { }
 
 
+
 std::vector<UiResponse> UiServiceImpl::accountExit() {
     std::cout << "게시판을 종료합니다." << std::endl;
 
     uiAccount->UiServiceExitHandler();
 
     return std::vector<UiResponse>();
-}
-
-UiServiceImpl::~UiServiceImpl() {
-
 }
 
 std::vector<UiResponse> UiServiceImpl::login() {
@@ -57,7 +54,7 @@ std::vector<UiResponse> UiServiceImpl::postRead() {
 std::vector<UiResponse> UiServiceImpl::postEdit() {
     std::cout << "게시물을 수정합니다.." << std::endl;
 
-    uiBoard->UiServiceModifyHandler();
+    uiBoard->UiServiceEditHandler();
 
     return std::vector<UiResponse>();
 }
@@ -73,8 +70,10 @@ std::vector<UiResponse> UiServiceImpl::postRemove() {
 std::vector<UiResponse> UiServiceImpl::postExit() {
     std::cout << "게시판을 종료합니." << std::endl;
 
-    uiBoard->UiServiceExitHandler();
+    uiBoard->UiServiceBoardExitHandler();
 
     return std::vector<UiResponse>();
 }
+
+
 

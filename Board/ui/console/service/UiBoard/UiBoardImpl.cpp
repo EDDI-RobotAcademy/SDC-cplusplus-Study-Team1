@@ -29,7 +29,7 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceCreateHandler() {
 }
 
 
-std::vector<BoardResponse> UiBoardImpl::UiServiceExitHandler()
+std::vector<BoardResponse> UiBoardImpl::UiServiceBoardExitHandler()
 {
     std::cout << "UiServiceExitHandler:출력!" << std::endl;
     std::cout << "게시판을 종료합니다." << std::endl;

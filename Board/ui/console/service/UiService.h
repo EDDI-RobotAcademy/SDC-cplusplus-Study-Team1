@@ -9,6 +9,7 @@
 #include "response/UiResponse.h"
 
 class UiService{
+public:
     virtual ~UiService() = default;
     virtual std::vector<UiResponse> login() = 0;
     virtual std::vector<UiResponse> creatId() = 0;
