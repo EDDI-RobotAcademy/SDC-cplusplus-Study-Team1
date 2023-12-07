@@ -18,6 +18,8 @@ public:
 
     bool connect();
     bool insertData(const std::string& queryString);
+    //void selectpartData();
+    //bool selectpartData(std::string& accountIDList);
 
     bool updateData(int boardId, const std::string& newTitle, const std::string& newContent);
     bool deleteData(int boardId);
