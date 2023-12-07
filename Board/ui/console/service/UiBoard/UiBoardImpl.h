@@ -13,7 +13,7 @@ class UiBoardImpl : public UiBoard {
 public:
     std::vector<BoardResponse> UiServiceCreateHandler() override;
     std::vector<BoardResponse> UiServiceExitHandler() override;
-    std::vector<BoardResponse> UiServiceModifyHandler() override;
+    std::vector<BoardResponse> UiServiceEditHandler() override;
     std::vector<BoardResponse> UiServiceReadHandler() override;
     std::vector<BoardResponse> UiServiceRemoveHandler() override;
 };
@@ -42,8 +42,8 @@ class UiServiceModifyHandler {
 private:
 
 public:
-    UiServiceModifyHandler();
-    ~UiServiceModifyHandler();
+    UiServiceEditHandler();
+    ~UiServiceEditHandler();
 };
 
 class UiServiceReadHandler {

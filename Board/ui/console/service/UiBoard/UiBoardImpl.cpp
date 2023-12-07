@@ -37,7 +37,7 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceExitHandler()
 }
 
 
-std::vector<BoardResponse> UiBoardImpl::UiServiceModifyHandler()
+std::vector<BoardResponse> UiBoardImpl::UiServiceEditHandler()
 {
     std::cout << "UiBoardImpl:: UiServiceModifyHandler:출력!" << std::endl;
 
