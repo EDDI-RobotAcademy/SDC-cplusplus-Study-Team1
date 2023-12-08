@@ -1,7 +1,7 @@
 //
 // Created by eddi on 23. 12. 4.
 //
-
+#include <algorithm>
 #include "AccountRepositoryImpl.h"
 #include "../../mysql/DbProcess.h"
 #include "../../ui/console/user_keyboard/user_keyboard_input.h"
@@ -48,8 +48,43 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
 }
 
 
+// account table에서 account_id 리스트만 가져올 것이여
+std::vector<Account> getAccountIDs(MYSQL* conn) {
+    std::vector<Account> accountIDList;
+
+    const std::string& selectQuery = "SELECT account_id FROM account";
+
+    if(mysql_query(conn, selectQuery.c_str()) == 0){
+        MYSQL_RES* result = mysql_store_result(conn);
+        if (result == nullptr) {
+            std::cerr << "mysql_store_result() failed" << std::endl;
+            return accountIDList;
+        }
+
+        MYSQL_ROW row; // 한 행의 데이터
+        while ((row = mysql_fetch_row(result)) != nullptr) {
+            Account accountID(
+                    0,                            // id
+                    row[1],                 // account_id
+                    "",                      // password
+                    row[3] ? row[3] : "NULL", // reg_date
+                    row[4] ? row[4] : "NULL"  // upd_date
+            );
+            accountIDList.push_back(accountID);
+        }
+        mysql_free_result(result);
+    }
+    else{
+        std::cerr << "mysql_query() failed" << std::endl;
+    }
+
+    return accountIDList;
+}
+
+
+
 // 회원 정보 저장
-std::vector<Account> AccountRepositoryImpl::regsave()
+std::vector<Account> AccountRepositoryImpl::registerinfosave()
 {
     std::cout << "AccountReopository: 입력받은 회원정보 저장!" << std::endl;
 
@@ -58,7 +93,18 @@ std::vector<Account> AccountRepositoryImpl::regsave()
     DbProcess* dbInstance = DbProcess::getInstance();
 
     // 아이디, 비번 받아오는 걸로 수정해야 하는디~
+
     std::string accountId = "qqqqq";
+
+    std::string accountId = "iiiii";
+
+    // 아이디 중복 확인 여기에 삽입...
+    if (!AccountIDoverlapcheck(accountId))
+    {
+        return std::vector<Account>();
+    }
+
+
     std::string password = "ppppp";
 
     // 아이디랑 비번 테이블에 넣을 것이여~
@@ -75,6 +121,31 @@ std::vector<Account> AccountRepositoryImpl::regsave()
     }
 
     return accountList;
+}
+
+
+// 아이디 중복 체크 함수(비교)
+// AccountIdOverlapCheck, AccountDuplicationCheck
+bool AccountRepositoryImpl::AccountIDoverlapcheck(const std::string& accountId)
+{
+    // 제대로 실행이 되나 확인용
+    std::cout << "중복 아이디 확인" << std::endl;
+
+    // account ID 리스트 가져오기.
+    DbProcess* dbInstance = DbProcess::getInstance();
+    std::vector<Account> accountIDList = getAccountIDs(dbInstance->getConn());
+
+    auto accountWithId = std::find_if(accountIDList.begin(), accountIDList.end(),
+                                      [&accountId](Account acc){
+                                                return acc.getAccountId() == accountId;
+                                            });
+
+    if (accountWithId != accountIDList.end()) {
+        // 계정 ID가 이미 존재하므로 처리 중단
+        std::cerr << "Error: 계정 ID가 이미 존재함!" << std::endl;
+        return false;
+    }
+    return true;
 }
 
 

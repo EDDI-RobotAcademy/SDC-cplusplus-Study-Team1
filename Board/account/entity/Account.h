@@ -21,7 +21,7 @@ public:
     Account(int id, const std::string& account_id,std::string& password);
     Account(int id, const std::string& account_id, const std::string& password,
                      const std::string& reg_date, const std::string& upd_date);
-    std::string get_account_id();
+    std::string getAccountId();
     std::string get_password();
 
     void printAccountInfo() const;

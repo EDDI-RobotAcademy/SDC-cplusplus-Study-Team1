@@ -23,6 +23,8 @@ bool DbProcess::connect() {
     return (mysql_real_connect(conn, DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306, nullptr, 0) != nullptr);
 }
 
+
+// 쿼리문 실행을 위한 함수(?)
 bool DbProcess::insertData(const std::string& queryString) {
 
     std::string insertQuery;

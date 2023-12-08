@@ -8,7 +8,7 @@
 #include <vector>
 #include <sys/user.h>
 #include "UiAccount.h"
-#include "../../../../board/service/response/BoardResponse.h"
+#include "../../../board/service/response/BoardResponse.h"
 
 class UiAccountImpl : public UiAccount {
 public:

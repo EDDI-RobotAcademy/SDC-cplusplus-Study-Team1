@@ -13,7 +13,7 @@
 #include "mysql/DbProcess.h"
 
 
-void i_dont_know_name()
+void initializeMysqlConnection()
 {
     // mysql 접속시작
     const char* DB_HOST = "localhost";
@@ -25,7 +25,7 @@ void i_dont_know_name()
 }
 
 int main() {
-    i_dont_know_name();
+    initializeMysqlConnection();
 //    BoardRepository *boardRepository = new BoardRepositoryImpl();
 //    BoardService* boardService = new BoardServiceImpl();
 /*    auto boardRepository = std::make_shared<BoardRepositoryImpl>();

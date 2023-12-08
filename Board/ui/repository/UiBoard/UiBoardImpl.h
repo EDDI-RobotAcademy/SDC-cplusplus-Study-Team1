@@ -7,7 +7,7 @@
 
 #include <vector>
 #include "UiBoard.h"
-#include "../../../../board/service/response/BoardResponse.h"
+#include "../../../board/service/response/BoardResponse.h"
 
 class UiBoardImpl : public UiBoard {
 public:
