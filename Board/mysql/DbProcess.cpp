@@ -131,6 +131,7 @@ bool DbProcess::checkid(std::string& accountId)
         mysql_free_result(result);
     } else {
         std::cout << "mysql_query() failed" << std::endl;
+        return false;
     }
 }
 
