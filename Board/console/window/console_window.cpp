@@ -15,6 +15,7 @@
 #include "../../ui/repository/UiBoard/UiBoardImpl.h"
 #include "../../ui/repository/UiAccount/UiAccountImpl.h"
 #include "../../ui/controller/UiController.h"
+#include "../../ui/controller/UiControllerCommand.h"
 
 #include <string>
 #include <iostream>
@@ -41,14 +42,13 @@ void console_window::start_console_ui_window()
     auto uiController = std::make_shared<UiController>(uiService);
     uiController->initializeCommandTable();
 
-
     // UiBoardImpl 포인터 ( ui / console / UiBoard ) - 추후 사용을 위해 기입함(불필요 시 삭제)
     // 사용 예시 ) uiBoard->UiServiceCreateHandler();
 
     while (!player_enter_quit)
     {
         user_choice_command_number = user_choice_number_for_board_command();
-        uiController->commandTable[user_choice_command_number];
+        uiController->commandTable[user_choice_command_number](uiController, nullptr);
     }
 
 

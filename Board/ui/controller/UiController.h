@@ -17,7 +17,7 @@ private:
 public:
     UiController(std::shared_ptr<UiService> uiService);
     ~UiController();
-    using CommandFunction = void (*)(UiController*, void*);
+    using CommandFunction = void (*)(std::shared_ptr<UiController>, void*);
     std::vector<CommandFunction> commandTable;
 
     void initializeCommandTable();
