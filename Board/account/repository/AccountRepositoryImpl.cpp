@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "AccountRepositoryImpl.h"
 #include "../../mysql/DbProcess.h"
-#include "../../ui/console/user_keyboard/user_keyboard_input.h"
+#include "../../console/user_keyboard/user_keyboard_input.h"
 
 
 std::vector<Account> accountfetchResults(MYSQL* conn) {

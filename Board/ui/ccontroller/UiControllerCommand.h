@@ -1,0 +1,22 @@
+//
+// Created by eddi on 23. 12. 8.
+//
+
+#ifndef CLASS_TEST_UICONTROLLERCOMMAND_H
+#define CLASS_TEST_UICONTROLLERCOMMAND_H
+
+
+enum class UiControllerCommand {
+    CREATID,
+    LOGIN,
+    ACCOUNTEXIT,
+    POSTCREAT,
+    POSTREAD,
+    POSTEDIT,
+    POSTDELETE,
+    BOARDEXIT,
+    END
+};
+
+
+#endif //CLASS_TEST_UICONTROLLERCOMMAND_H

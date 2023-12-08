@@ -18,7 +18,7 @@ public:
     virtual std::vector<UiResponse> postRead() = 0;
     virtual std::vector<UiResponse> postEdit() = 0;
     virtual std::vector<UiResponse> postRemove() = 0;
-    virtual std::vector<UiResponse> postExit() = 0;
+    virtual std::vector<UiResponse> boardExit() = 0;
 };
 
 

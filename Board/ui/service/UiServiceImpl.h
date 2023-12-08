@@ -7,8 +7,8 @@
 
 #include "UiService.h"
 #include "response/UiResponse.h"
-#include "UiAccount/UiAccount.h"
-#include "UiBoard/UiBoard.h"
+#include "../repository/UiAccount/UiAccount.h"
+#include "../repository/UiBoard/UiBoard.h"
 
 #include <vector>
 #include <memory>
@@ -27,7 +27,7 @@ public:
     std::vector<UiResponse> postRead() override;
     std::vector<UiResponse> postEdit() override;
     std::vector<UiResponse> postRemove() override;
-    std::vector<UiResponse> postExit() override;
+    std::vector<UiResponse> boardExit() override;
 };
 
 
