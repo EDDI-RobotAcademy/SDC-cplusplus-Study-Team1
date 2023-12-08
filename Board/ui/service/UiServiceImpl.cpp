@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "UiServiceImpl.h"
-#include "UiAccount/UiAccount.h"
+#include "../repository/UiAccount/UiAccount.h"
 
 
 UiServiceImpl::UiServiceImpl(std::shared_ptr<UiAccount> uiAccount,std::shared_ptr<UiBoard> uiBoard) : uiAccount(uiAccount), uiBoard(uiBoard) { }
@@ -67,7 +67,7 @@ std::vector<UiResponse> UiServiceImpl::postRemove() {
     return std::vector<UiResponse>();
 }
 
-std::vector<UiResponse> UiServiceImpl::postExit() {
+std::vector<UiResponse> UiServiceImpl::boardExit() {
     std::cout << "게시판을 종료합니." << std::endl;
 
     uiBoard->UiServiceBoardExitHandler();

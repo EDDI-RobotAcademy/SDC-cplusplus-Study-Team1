@@ -4,7 +4,7 @@
 #include "board/service/BoardServiceImpl.h"
 #include "board/repository/BoardRepository.h"
 #include "board/repository/BoardRepositoryImpl.h"
-#include "ui/console/window/console_window.h"
+#include "console/window/console_window.h"
 
 #include "account/controller/AccountController.h"
 #include "account/service/AccountServiceImpl.h"

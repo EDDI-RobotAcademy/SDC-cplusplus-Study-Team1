@@ -6,7 +6,7 @@
 #include <vector>
 #include <iostream>
 #include "UiBoardImpl.h"
-#include "../../console/user_keyboard/user_keyboard_input.h"
+#include "../../../console/user_keyboard/user_keyboard_input.h"
 
 std::vector<BoardResponse> UiBoardImpl::UiServiceCreateHandler() {
     std::cout << "UiServiceCreateHandler:출력!" << std::endl;
