@@ -11,10 +11,12 @@ std::vector<AccountResponse> AccountServiceImpl::acregister()
 {
     std::cout << "어카운트서비스임플 회원가입 " << std::endl;
 
-    accountRepository->regsave();
+    accountRepository->registerinfosave();
 
     return std::vector<AccountResponse>();
 }
+
+
 std::vector<AccountResponse> AccountServiceImpl::aclogin()
 {
     std::cout << "어카운트서비스임플 로그인 " << std::endl;
