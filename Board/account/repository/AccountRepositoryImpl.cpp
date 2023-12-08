@@ -57,7 +57,7 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
     DbProcess* dbInstance = DbProcess::getInstance();
 
     // 아이디, 비번 받아오는 걸로 수정해야 하는디~
-    std::string accountId = "assss";
+    std::string accountId = "ffdfdfdss";
     std::string password = "ppppp";
 
     // 아이디 중복 확인
@@ -89,14 +89,23 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
 
 
 
-
 // 로그인
 std::vector<Account> AccountRepositoryImpl::login()
 {
-    std::cout << "로그인!" << std::endl;
-//
-//    DbProcess* dbInstance = DbProcess::getInstance();
-//
-//    int check_AccountInfo = dbInstance->checkAccount()
+    std::cout << "로그인 시도!" << std::endl;
+
+    std::string userId = "assss";
+    std::string userPassword = "ppppp";
+
+    DbProcess* dbInstance = DbProcess::getInstance();
+
+    int check_AccountInfo = dbInstance->checkAccount(userId, userPassword);
+    if(check_AccountInfo == 0){
+        std::cout << "로그인 실패" << std::endl;
+    }
+    else if (check_AccountInfo == 1) {
+        std::cout << "로그인 성공" << std::endl;
+    }
+
     return std::vector<Account>();
 }

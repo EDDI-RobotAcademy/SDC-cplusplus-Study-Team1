@@ -116,7 +116,6 @@ DbProcess* DbProcess::getInstance()
 bool DbProcess::checkid(std::string& accountId)
 {
     std::string checkidQuery = "SELECT * FROM account where account_id = '" + accountId + "'";
-
     if (mysql_query(conn, checkidQuery.c_str()) == 0) {
         MYSQL_RES* result = mysql_store_result(conn);
         if (mysql_fetch_row(result) == nullptr)  {
@@ -140,7 +139,6 @@ bool DbProcess::checkid(std::string& accountId)
 bool DbProcess::checkAccount(std::string& accountId, std::string& password) {
     std::string checkQuery = "SELECT * FROM account where account_id = '" + accountId + "' and password = '" + password + "'";
 
-
     if (mysql_query(conn, checkQuery.c_str()) == 0) {
         MYSQL_RES* result = mysql_store_result(conn);
         if ((mysql_fetch_row(result)) == nullptr) {
@@ -157,6 +155,8 @@ bool DbProcess::checkAccount(std::string& accountId, std::string& password) {
 
     } else {
         std::cout << "mysql_query() failed" << std::endl;
+        return false;
+
     }
 }
 
