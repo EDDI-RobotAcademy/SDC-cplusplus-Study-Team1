@@ -119,7 +119,8 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
 
 
 // 아이디 중복 체크 함수(비교)
-bool AccountRepositoryImpl:: AccountIDoverlapcheck(const std::string& accountId)
+// AccountIdOverlapCheck, AccountDuplicationCheck
+bool AccountRepositoryImpl::AccountIDoverlapcheck(const std::string& accountId)
 {
     // 제대로 실행이 되나 확인용
     std::cout << "중복 아이디 확인" << std::endl;
@@ -129,7 +130,9 @@ bool AccountRepositoryImpl:: AccountIDoverlapcheck(const std::string& accountId)
     std::vector<Account> accountIDList = getAccountIDs(dbInstance->getConn());
 
     auto accountWithId = std::find_if(accountIDList.begin(), accountIDList.end(),
-                                      [&accountId](const Account& acc){ return acc.getAccountId() == accountId;});
+                                      [&accountId](Account acc){
+                                                return acc.getAccountId() == accountId;
+                                            });
 
     if (accountWithId != accountIDList.end()) {
         // 계정 ID가 이미 존재하므로 처리 중단
