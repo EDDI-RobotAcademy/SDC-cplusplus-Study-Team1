@@ -21,6 +21,7 @@ public:
     std::vector<CommandFunction> commandTable;
 
     void initializeCommandTable();
+    void accountCreatId();
     void accountLogin();
     void accountExit();
 };

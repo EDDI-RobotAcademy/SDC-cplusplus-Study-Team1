@@ -42,6 +42,7 @@ void console_window::start_console_ui_window()
     auto uiController = std::make_shared<UiController>(uiService);
     uiController->initializeCommandTable();
 
+
     // UiBoardImpl 포인터 ( ui / console / UiBoard ) - 추후 사용을 위해 기입함(불필요 시 삭제)
     // 사용 예시 ) uiBoard->UiServiceCreateHandler();
 

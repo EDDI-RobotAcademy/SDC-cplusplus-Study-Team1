@@ -21,9 +21,9 @@ std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
     std::cin >> password;
 
     std::cout <<"ID : "<< user << "비밀번호 : " <<password << std::endl; //확인용
+    
 
     return boardResponses;
-
 }
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()

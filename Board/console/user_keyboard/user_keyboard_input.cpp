@@ -10,6 +10,7 @@
 
 void user_keyboard_input::get_user_keyboard_input(std::string& keyboard_input)
 {
+    std::cin.ignore();
     std::getline(std::cin, keyboard_input);
 
     keyboard_input.erase(std::remove_if(keyboard_input.begin(),
