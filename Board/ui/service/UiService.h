@@ -11,7 +11,7 @@
 class UiService{
 public:
     virtual ~UiService() = default;
-    virtual std::vector<UiResponse> login() = 0;
+    virtual std::vector<UiResponse> accountLogin() = 0;
     virtual std::vector<UiResponse> creatId() = 0;
     virtual std::vector<UiResponse> accountExit() = 0;
     virtual std::vector<UiResponse> postCreat() = 0;

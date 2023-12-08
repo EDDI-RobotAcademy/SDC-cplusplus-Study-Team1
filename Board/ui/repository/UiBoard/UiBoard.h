@@ -6,8 +6,8 @@
 #define CLASS_TEST_UIBOARD_H
 
 #include <vector>
-#include "../response/UiResponse.h"
-#include "../../../../board/service/response/BoardResponse.h"
+#include "../../service/response/UiResponse.h"
+#include "../../../board/service/response/BoardResponse.h"
 
 class UiBoard {
 public:

@@ -6,7 +6,7 @@
 #define CLASS_TEST_UIACCOUNT_H
 
 #include <vector>
-#include "../../../../board/service/response/BoardResponse.h"
+#include "../../../board/service/response/BoardResponse.h"
 
 class UiAccount {
 public:

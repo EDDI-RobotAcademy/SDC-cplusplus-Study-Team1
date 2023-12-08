@@ -38,20 +38,20 @@ add_executable(class_test main.cpp
         account/service/response/AccountResponse.h
         account/service/request/AccountRequest.cpp
         account/service/request/AccountRequest.h
-        ui/console/service/UiBoard/UiBoardImpl.cpp
-        ui/console/service/UiBoard/UiBoardImpl.h
-        ui/console/service/UiBoard/UiBoard.h
+        ui/repository/UiBoard/UiBoardImpl.cpp
+        ui/repository/UiBoard/UiBoardImpl.h
+        ui/repository/UiBoard/UiBoard.h
         account/repository/AccountRepository.h
         account/service/AccountServiceImpl.cpp
         account/service/AccountServiceImpl.h
-        ui/console/service/response/UiResponse.cpp
-        ui/console/service/response/UiResponse.h
-        ui/console/service/UiAccount/UiAccountImpl.cpp
-        ui/console/service/UiAccount/UiAccountImpl.h
-        ui/console/service/UiAccount/UiAccount.h
-        ui/console/service/UiServiceImpl.cpp
-        ui/console/service/UiServiceImpl.h
-        ui/console/service/UiService.h
+        ui/service/response/UiResponse.cpp
+        ui/service/response/UiResponse.h
+        ui/repository/UiAccount/UiAccountImpl.cpp
+        ui/repository/UiAccount/UiAccountImpl.h
+        ui/repository/UiAccount/UiAccount.h
+        ui/service/UiServiceImpl.cpp
+        ui/service/UiServiceImpl.h
+        ui/service/UiService.h
 
 )
 
