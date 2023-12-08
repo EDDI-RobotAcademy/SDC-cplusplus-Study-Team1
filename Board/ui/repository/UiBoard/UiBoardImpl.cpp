@@ -7,8 +7,9 @@
 #include <iostream>
 #include "UiBoardImpl.h"
 #include "../../../console/user_keyboard/user_keyboard_input.h"
+#include "../../../board/entity/Board.h"
 
-std::vector<BoardResponse> UiBoardImpl::UiServiceCreateHandler() {
+Board *UiBoardImpl::UiServiceCreateHandler() {
     std::cout << "UiServiceCreateHandler:출력!" << std::endl;
 
     //std::cout << "게시글을 작성합니다." << std::endl;
@@ -26,6 +27,12 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceCreateHandler() {
         _user_keyboard_input.get_user_keyboard_input_with_message(title_print, title);
         _user_keyboard_input.get_user_keyboard_input_with_message(writer_print, writer);
         _user_keyboard_input.get_user_keyboard_input_with_message(content_print, content);
+
+        Board *newPost = new Board(title, writer, content);
+
+        std::cout << "\n제목 :" << title << "\n작성자: " << writer << "\n내용: " << content << std::endl;
+
+    return newPost;
 }
 
 

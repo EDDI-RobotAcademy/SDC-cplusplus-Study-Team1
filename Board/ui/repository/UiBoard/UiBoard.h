@@ -8,11 +8,12 @@
 #include <vector>
 #include "../../service/response/UiResponse.h"
 #include "../../../board/service/response/BoardResponse.h"
+#include "../../../board/entity/Board.h"
 
 class UiBoard {
 public:
     virtual ~UiBoard() = default;
-    virtual std::vector<BoardResponse> UiServiceCreateHandler() = 0;
+    virtual Board *UiServiceCreateHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceBoardExitHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceEditHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceReadHandler() = 0;
