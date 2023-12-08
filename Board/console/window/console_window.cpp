@@ -14,7 +14,7 @@
 #include "../../ui/service/UiServiceImpl.h"
 #include "../../ui/repository/UiBoard/UiBoardImpl.h"
 #include "../../ui/repository/UiAccount/UiAccountImpl.h"
-#include "../../ui/ccontroller/UiController.h"
+#include "../../ui/controller/UiController.h"
 
 #include <string>
 #include <iostream>
