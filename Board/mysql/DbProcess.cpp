@@ -116,25 +116,48 @@ DbProcess* DbProcess::getInstance()
 bool DbProcess::checkid(std::string& accountId)
 {
     std::string checkidQuery = "SELECT * FROM account where account_id = '" + accountId + "'";
-    bool ischeckid = false;
 
     if (mysql_query(conn, checkidQuery.c_str()) == 0) {
         MYSQL_RES* result = mysql_store_result(conn);
         if (mysql_fetch_row(result) == nullptr)  {
             std::cerr << "사용 가능한 아이디" << std::endl;
-            ischeckid = true;
+            return true;
         }
 
         if(result != nullptr){
             std::cout << "중복된 아이디 사용 불가" << std::endl;
-            ischeckid = false;
+            return false;
         }
 
         mysql_free_result(result);
     } else {
-        std::cerr << "mysql_query() failed" << std::endl;
+        std::cout << "mysql_query() failed" << std::endl;
     }
-    return ischeckid;
+}
+
+
+// ID와 PASS 일치 여부 확인
+bool DbProcess::checkAccount(std::string& accountId, std::string& password) {
+    std::string checkQuery = "SELECT * FROM account where account_id = '" + accountId + "' and password = '" + password + "'";
+
+
+    if (mysql_query(conn, checkQuery.c_str()) == 0) {
+        MYSQL_RES* result = mysql_store_result(conn);
+        if ((mysql_fetch_row(result)) == nullptr) {
+            std::cout << "아이디와 비밀번호가 일치하지 않습니다." << std::endl;
+            return false;
+        }
+
+        if (result != nullptr) {
+            std::cout << "아이디와 비밀번호가 일치합니다." << std::endl;
+            return true;
+        }
+
+        mysql_free_result(result);
+
+    } else {
+        std::cout << "mysql_query() failed" << std::endl;
+    }
 }
 
 MYSQL *DbProcess::getConn()

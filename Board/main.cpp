@@ -37,8 +37,8 @@ int main() {
     auto accountRepository = std::make_shared<AccountRepositoryImpl>();
     auto accountService = std::make_shared<AccountServiceImpl>(accountRepository);
     auto accountController = std::make_shared<AccountController>(accountService);
-    //accountController->accountreg();
-    accountController->accountlogin();
+    accountController->accountreg();
+    //accountController->accountlogin();
 
 
     console_window _console_window;

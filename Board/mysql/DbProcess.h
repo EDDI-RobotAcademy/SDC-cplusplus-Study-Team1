@@ -24,6 +24,7 @@ public:
     void selectData();
     void readData(int boardId);
     bool checkid(std::string& accountId);
+    bool checkAccount(std::string& accountId, std::string& password);
 
 
     MYSQL *getConn();
