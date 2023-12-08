@@ -10,10 +10,10 @@
 #include "../../../board/repository/BoardRepository.h"
 #include "../../../board/repository/BoardRepositoryImpl.h"
 #include "../user_keyboard/user_keyboard_input.h"
-#include "../service/UiService.h"
-#include "../service/UiServiceImpl.h"
-#include "../service/UiBoard/UiBoardImpl.h"
-#include "../service/UiAccount/UiAccountImpl.h"
+#include "../../service/UiService.h"
+#include "../../service/UiServiceImpl.h"
+#include "../../service/UiBoard/UiBoardImpl.h"
+#include "../../service/UiAccount/UiAccountImpl.h"
 
 #include <string>
 #include <iostream>

@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include "UiAccountImpl.h"
-#include "../../../../board/service/response/BoardResponse.h"
+#include "../../../board/service/response/BoardResponse.h"
 
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
