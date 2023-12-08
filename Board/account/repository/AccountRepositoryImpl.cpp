@@ -9,6 +9,9 @@
 
 std::vector<Account> accountfetchResults(MYSQL* conn) {
     std::vector<Account> accountList;
+    // db에는 있지만 void이기 때문에 변형해서 사용해야함;
+//    std::string insertQuery = "INSERT INTO account (account_id, password, reg_date, upd_date) VALUES \
+//                               ('테스트qwer', '테스트ffff', now(6), now(6))";
 
     const std::string& selectQuery = "SELECT * FROM account";
 
@@ -21,8 +24,8 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
             return accountList;
         }
 
-        MYSQL_ROW row; // 한 행의 데이터
-        // 루프를 돌면서 account 객체를 만듬
+        MYSQL_ROW row;
+        // 루프를 돌면서 Board 객체를 만듬
         while ((row = mysql_fetch_row(result)) != nullptr) {
             Account account(
                     std::stoi(row[0]),        // id
@@ -79,6 +82,7 @@ std::vector<Account> getAccountIDs(MYSQL* conn) {
 }
 
 
+
 // 회원 정보 저장
 std::vector<Account> AccountRepositoryImpl::registerinfosave()
 {
@@ -88,8 +92,10 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
 
     DbProcess* dbInstance = DbProcess::getInstance();
 
-
     // 아이디, 비번 받아오는 걸로 수정해야 하는디~
+
+    std::string accountId = "qqqqq";
+
     std::string accountId = "iiiii";
 
     // 아이디 중복 확인 여기에 삽입...
@@ -98,6 +104,7 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
         return std::vector<Account>();
     }
 
+
     std::string password = "ppppp";
 
     // 아이디랑 비번 테이블에 넣을 것이여~
@@ -105,7 +112,6 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
                       ('" + accountId + "', '" + password + "' )";
 
     dbInstance->insertData(queryString);
-    delete account;
 
     std::vector<Account> accountList = accountfetchResults(dbInstance->getConn()); // db.getConn -> 저장된 데이터 불러오기
 
@@ -146,26 +152,20 @@ bool AccountRepositoryImpl::AccountIDoverlapcheck(const std::string& accountId)
 // 로그인
 std::vector<Account> AccountRepositoryImpl::loginsave()
 {
-//    std::cout << "AccountReopository: 로그인완료!" << std::endl;
-//    // mysql 접속시작
-//    const char* DB_HOST = "localhost";
-//    const char* DB_USER = "eddi";
-//    const char* DB_PASS = "eddi@123";
-//    const char* DB_NAME = "test_db";
-//
-//    DbProcess db(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-//
-//    if (!db.connect()) {
-//        std::cerr << "Connection error" << std::endl;
-//    }
-//    // mysql 접속완료
-//
-//    std::vector<Account> accountList = accountfetchResults(db.getConn()); // db.getConn -> 저장된 데이터 불러오기
-//
-//    //처리 결과 학인하는 부분
-//    for (const auto& account : accountList) {
-//        account.printAccountInfo();
-//    }
-//
-//    return accountList;
+    std::cout << "AccountReopository: 로그인완료!" << std::endl;
+    // mysql 접속시작
+    DbProcess* dbInstance = DbProcess::getInstance();
+
+    // mysql 접속완료
+    //std::string testidcheck = "qqqqq";
+    dbInstance -> DbProcess::checkid();
+
+    std::vector<Account> accountList = accountfetchResults(dbInstance->getConn()); // db.getConn -> 저장된 데이터 불러오기
+
+    //처리 결과 학인하는 부분
+    for (const auto& account : accountList) {
+        account.printAccountInfo();
+    }
+
+    return accountList;
 }

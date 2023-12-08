@@ -28,11 +28,11 @@ bool DbProcess::connect() {
 bool DbProcess::insertData(const std::string& queryString) {
 
     std::string insertQuery;
+
     insertQuery = queryString;
 
     return (mysql_query(conn, insertQuery.c_str()) == 0);
 }
-
 
 bool DbProcess::updateData(int boardId, const std::string& newTitle, const std::string& newContent) {
     std::string updateQuery = "UPDATE board SET title = '" + newTitle +
@@ -101,7 +101,7 @@ void DbProcess::readData(int boardId) {
         instance = new DbProcess(host, user,pass, dbName);
         if(!(instance->connect()))
         {
-            std::cout << "연결이 안 됩니다." << std::endl;
+            std::cout << "연결이 안됩니다." << std::endl;
         }
 
     }
@@ -111,6 +111,30 @@ void DbProcess::readData(int boardId) {
 DbProcess* DbProcess::getInstance()
 {
     return instance;
+}
+
+void DbProcess::checkid()
+{
+
+    std::string checkidQuery = "SELECT account_id FROM account" ;
+    if (mysql_query(conn, checkidQuery.c_str()) == 0) {
+        MYSQL_RES* result = mysql_store_result(conn);
+        if (result == nullptr) {
+            std::cerr << "mysql_store_result() failed" << std::endl;
+            return;
+        }
+
+        MYSQL_ROW row = mysql_fetch_row(result);
+        if (!row) {
+            std::cout << "사용가능한 아이디입니다." << std::endl;
+        } else {
+            std::cout << "중복된 아이디입니다." << std::endl;
+        }
+
+        mysql_free_result(result);
+    } else {
+        std::cerr << "mysql_query() failed" << std::endl;
+    }
 }
 
 MYSQL *DbProcess::getConn()
