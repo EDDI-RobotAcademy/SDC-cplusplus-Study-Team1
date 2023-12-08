@@ -31,6 +31,16 @@ add_executable(class_test main.cpp
         account/service/response/AccountResponse.h
         account/service/request/AccountRequest.cpp
         account/service/request/AccountRequest.h
+        account/service/AccountService.h
+        account/service/AccountServiceImpl.cpp
+        account/service/AccountServiceImpl.h
+        account/repository/AccountRepository.h
+        account/repository/AccountRepositoryImpl.cpp
+        account/repository/AccountRepositoryImpl.h
+        account/entity/Account.cpp
+        account/entity/Account.h
+        account/controller/AccountController.cpp
+        account/controller/AccountController.h
         ui/repository/UiBoard/UiBoardImpl.cpp
         ui/repository/UiBoard/UiBoardImpl.h
         ui/repository/UiBoard/UiBoard.h
