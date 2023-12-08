@@ -36,7 +36,7 @@ Board *UiBoardImpl::UiServiceCreateHandler() {
 }
 
 
-std::vector<BoardResponse> UiBoardImpl::UiServiceBoardExitHandler()
+void UiBoardImpl::UiServiceBoardExitHandler()
 {
     std::cout << "UiServiceExitHandler:출력!" << std::endl;
     std::cout << "게시판을 종료합니다." << std::endl;
@@ -65,6 +65,7 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceEditHandler()
     _user_keyboard_input.get_user_keyboard_input_with_message(writer_print, writer);
     _user_keyboard_input.get_user_keyboard_input_with_message(content_print, content);
 
+    return std::vector<BoardResponse>();
 }
 
 
@@ -80,6 +81,7 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceReadHandler()
 
     _user_keyboard_input.get_user_keyboard_input_with_message(board_id_print, board_id);
 
+    return std::vector<BoardResponse>();
 }
 
 
@@ -95,4 +97,5 @@ std::vector<BoardResponse> UiBoardImpl::UiServiceRemoveHandler()
 
     _user_keyboard_input.get_user_keyboard_input_with_message(board_id_print, board_id);
 
+    return std::vector<BoardResponse>();
 }

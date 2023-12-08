@@ -14,7 +14,7 @@ class UiBoard {
 public:
     virtual ~UiBoard() = default;
     virtual Board *UiServiceCreateHandler() = 0;
-    virtual std::vector<BoardResponse> UiServiceBoardExitHandler() = 0;
+    virtual void UiServiceBoardExitHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceEditHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceReadHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceRemoveHandler() = 0;

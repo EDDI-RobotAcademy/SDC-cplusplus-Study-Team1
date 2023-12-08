@@ -14,7 +14,7 @@ class UiBoardImpl : public UiBoard {
 public:
 
     Board *UiServiceCreateHandler() override;
-    std::vector<BoardResponse> UiServiceBoardExitHandler() override;
+    void UiServiceBoardExitHandler() override;
     std::vector<BoardResponse> UiServiceEditHandler() override;
     std::vector<BoardResponse> UiServiceReadHandler() override;
     std::vector<BoardResponse> UiServiceRemoveHandler() override;
