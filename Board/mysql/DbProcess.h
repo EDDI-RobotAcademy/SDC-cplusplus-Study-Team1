@@ -23,7 +23,7 @@ public:
     bool deleteData(int boardId);
     void selectData();
     void readData(int boardId);
-    void checkid();
+    bool checkid(std::string& accountId);
 
 
     MYSQL *getConn();

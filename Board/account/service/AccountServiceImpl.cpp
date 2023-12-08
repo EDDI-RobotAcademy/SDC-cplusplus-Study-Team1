@@ -21,7 +21,7 @@ std::vector<AccountResponse> AccountServiceImpl::aclogin()
 {
     std::cout << "어카운트서비스임플 로그인 " << std::endl;
 
-    accountRepository->loginsave();
+    accountRepository->login();
 
     return std::vector<AccountResponse>();
 }

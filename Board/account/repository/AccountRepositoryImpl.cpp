@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "AccountRepositoryImpl.h"
 #include "../../mysql/DbProcess.h"
-#include "../../ui/console/user_keyboard/user_keyboard_input.h"
+#include "../../console/user_keyboard/user_keyboard_input.h"
 
 
 std::vector<Account> accountfetchResults(MYSQL* conn) {
@@ -61,7 +61,7 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
     std::string password = "ppppp";
 
     // 아이디 중복 확인
-    int check_id = dbInstance->checkId(accountId);
+    int check_id = dbInstance->checkid(accountId);
     if(check_id == 0)
     {
         std::cout << "회원가입 실패"<<std::endl;

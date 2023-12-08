@@ -113,28 +113,28 @@ DbProcess* DbProcess::getInstance()
     return instance;
 }
 
-void DbProcess::checkid()
+bool DbProcess::checkid(std::string& accountId)
 {
+    std::string checkidQuery = "SELECT * FROM account where account_id = '" + accountId + "'";
+    bool ischeckid = false;
 
-    std::string checkidQuery = "SELECT account_id FROM account" ;
     if (mysql_query(conn, checkidQuery.c_str()) == 0) {
         MYSQL_RES* result = mysql_store_result(conn);
-        if (result == nullptr) {
-            std::cerr << "mysql_store_result() failed" << std::endl;
-            return;
+        if (mysql_fetch_row(result) == nullptr)  {
+            std::cerr << "사용 가능한 아이디" << std::endl;
+            ischeckid = true;
         }
 
-        MYSQL_ROW row = mysql_fetch_row(result);
-        if (!row) {
-            std::cout << "사용가능한 아이디입니다." << std::endl;
-        } else {
-            std::cout << "중복된 아이디입니다." << std::endl;
+        if(result != nullptr){
+            std::cout << "중복된 아이디 사용 불가" << std::endl;
+            ischeckid = false;
         }
 
         mysql_free_result(result);
     } else {
         std::cerr << "mysql_query() failed" << std::endl;
     }
+    return ischeckid;
 }
 
 MYSQL *DbProcess::getConn()
