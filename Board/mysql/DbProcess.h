@@ -23,6 +23,7 @@ public:
     bool deleteData(int boardId);
     void selectData();
     void readData(int boardId);
+    void checkid();
 
 
     MYSQL *getConn();

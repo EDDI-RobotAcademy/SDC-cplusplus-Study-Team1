@@ -44,6 +44,22 @@ add_executable(class_test main.cpp
         account/repository/AccountRepository.h
         account/service/AccountServiceImpl.cpp
         account/service/AccountServiceImpl.h
+        ui/console/service/response/UiResponse.cpp
+        ui/console/service/response/UiResponse.h
+        ui/console/service/UiAccount/UiAccountImpl.cpp
+        ui/console/service/UiAccount/UiAccountImpl.h
+        ui/console/service/UiAccount/UiAccount.h
+        ui/console/service/UiServiceImpl.cpp
+        ui/console/service/UiServiceImpl.h
+        ui/console/service/UiService.h
+        account/controller/request_form/AccountLoginRequestForm.cpp
+        account/controller/request_form/AccountLoginRequestForm.h
+        account/controller/request_form/AccountRegisterRequestForm.cpp
+        account/controller/request_form/AccountRegisterRequestForm.h
+        account/controller/response_form/AccountLoginResponseForm.cpp
+        account/controller/response_form/AccountLoginResponseForm.h
+        account/controller/response_form/AccountRegisterResponseForm.cpp
+        account/controller/response_form/AccountRegisterResponseForm.h
         ui/service/response/UiResponse.cpp
         ui/service/response/UiResponse.h
         ui/repository/UiAccount/UiAccountImpl.cpp
@@ -52,7 +68,6 @@ add_executable(class_test main.cpp
         ui/service/UiServiceImpl.cpp
         ui/service/UiServiceImpl.h
         ui/service/UiService.h
-
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
