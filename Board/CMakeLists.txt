@@ -52,6 +52,14 @@ add_executable(class_test main.cpp
         ui/console/service/UiServiceImpl.cpp
         ui/console/service/UiServiceImpl.h
         ui/console/service/UiService.h
+        account/controller/request_form/AccountLoginRequestForm.cpp
+        account/controller/request_form/AccountLoginRequestForm.h
+        account/controller/request_form/AccountRegisterRequestForm.cpp
+        account/controller/request_form/AccountRegisterRequestForm.h
+        account/controller/response_form/AccountLoginResponseForm.cpp
+        account/controller/response_form/AccountLoginResponseForm.h
+        account/controller/response_form/AccountRegisterResponseForm.cpp
+        account/controller/response_form/AccountRegisterResponseForm.h
 
 )
 
