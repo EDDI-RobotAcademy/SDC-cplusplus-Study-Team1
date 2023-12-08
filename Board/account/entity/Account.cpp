@@ -31,7 +31,7 @@ void Account::printAccountInfo() const {
               << ", Updated At: " << std::chrono::system_clock::to_time_t(updated_at) << std::endl;
 
 }
-std::string Account:: get_account_id()
+std::string Account:: getAccountId()
 {
     return account_id;
 }
