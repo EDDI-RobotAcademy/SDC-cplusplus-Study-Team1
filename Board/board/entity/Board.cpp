@@ -4,6 +4,11 @@
 
 #include "Board.h"
 
+Board::Board(const std::string& title, const std::string& writer, const std::string& content)
+        : title(title),
+          writer(writer),
+          content(content) { }
+
 Board::Board(int id, const std::string& title, const std::string& writer, const std::string& content)
         : id(id),
           title(title),

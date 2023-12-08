@@ -8,12 +8,13 @@
 #include <vector>
 #include "UiBoard.h"
 #include "../../../board/service/response/BoardResponse.h"
+#include "../../../board/entity/Board.h"
 
 class UiBoardImpl : public UiBoard {
 public:
 
-    std::vector<BoardResponse> UiServiceCreateHandler() override;
-    std::vector<BoardResponse> UiServiceBoardExitHandler() override;
+    Board *UiServiceCreateHandler() override;
+    void UiServiceBoardExitHandler() override;
     std::vector<BoardResponse> UiServiceEditHandler() override;
     std::vector<BoardResponse> UiServiceReadHandler() override;
     std::vector<BoardResponse> UiServiceRemoveHandler() override;
