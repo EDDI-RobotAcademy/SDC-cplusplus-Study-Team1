@@ -12,10 +12,11 @@ void UiController::initializeCommandTable() {
     commandTable.resize(static_cast<size_t>(UiControllerCommand::END));
 
     //commandTable[static_cast<size_t>(UiControllerCommand::LOGIN)] =
-            +[](UiController* controller, void* data) { controller->accountLogin(); };
+            +[](std::shared_ptr<UiController> controller, void* data) { controller->accountLogin(); };
 
     commandTable[static_cast<size_t>(UiControllerCommand::ACCOUNTEXIT)] =
-            +[](UiController* controller, void* data) { controller->accountExit(); };
+            +[](std::shared_ptr<UiController> controller, void* data) { controller->accountExit(); };
+
 }
 
 void UiController::accountLogin() {
@@ -28,6 +29,7 @@ UiController::~UiController() {
 }
 
 void UiController::accountExit() {
+    std::cout<< " 안녕" << std::endl;
     uiService->accountExit();
 }
 

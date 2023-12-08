@@ -93,10 +93,10 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
 // 로그인
 std::vector<Account> AccountRepositoryImpl::login()
 {
-//    std::cout << "로그인!" << std::endl;
+    std::cout << "로그인!" << std::endl;
 //
 //    DbProcess* dbInstance = DbProcess::getInstance();
 //
 //    int check_AccountInfo = dbInstance->checkAccount()
-
+    return std::vector<Account>();
 }
