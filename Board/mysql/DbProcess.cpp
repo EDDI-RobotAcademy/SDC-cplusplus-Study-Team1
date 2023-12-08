@@ -23,6 +23,8 @@ bool DbProcess::connect() {
     return (mysql_real_connect(conn, DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306, nullptr, 0) != nullptr);
 }
 
+
+// 쿼리문 실행을 위한 함수(?)
 bool DbProcess::insertData(const std::string& queryString) {
 
     std::string insertQuery;
@@ -30,33 +32,6 @@ bool DbProcess::insertData(const std::string& queryString) {
 
     return (mysql_query(conn, insertQuery.c_str()) == 0);
 }
-
-
-//bool DbProcess::selectpartData() {
-//    bool Isdeplicate = true;
-//
-//    std::string selectQuery = "SELECT account_id FROM account";
-//
-//    if (mysql_query(conn, selectQuery.c_str()) == 0) {
-//        MYSQL_RES* result = mysql_store_result(conn);
-//        if (result == nullptr) {
-//            std::cerr << "mysql_store_result() failed" << std::endl;
-//            return;
-//        }
-//
-//        MYSQL_ROW row;
-//        while ((row = mysql_fetch_row(result)) != nullptr) {
-//            std::cout << "account_id: " << row[0]  << std::endl;
-//        }
-//
-//        mysql_free_result(result);
-//    } else {
-//        std::cerr << "mysql_query() failed" << std::endl;
-//    }
-//    return Isdeplicate;
-//}
-
-
 
 
 bool DbProcess::updateData(int boardId, const std::string& newTitle, const std::string& newContent) {

@@ -12,8 +12,8 @@
 class AccountRepositoryImpl : public AccountRepository {
 
 public:
-    std::vector<Account> regsave() override;
-    //std::vector<Account> AccountIDcheck() override;
+    std::vector<Account> registerinfosave() override;
+    bool AccountIDoverlapcheck(const std::string& accountId);
     std::vector<Account> loginsave() override;
 };
 

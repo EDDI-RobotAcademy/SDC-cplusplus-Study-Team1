@@ -13,7 +13,7 @@ class AccountRepository {
     std::string pw;
 public:
     virtual ~AccountRepository() = default;
-    virtual std::vector<Account> regsave() = 0;
+    virtual std::vector<Account> registerinfosave() = 0;
     virtual std::vector<Account> loginsave() = 0;
 };
 
