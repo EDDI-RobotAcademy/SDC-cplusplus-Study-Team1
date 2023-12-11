@@ -14,6 +14,8 @@ class AccountRepositoryImpl : public AccountRepository {
 
 public:
     Account *registerinfosave(Account *account) override;
+    static AccountRepositoryImpl& getInstance();
+
 };
 
 

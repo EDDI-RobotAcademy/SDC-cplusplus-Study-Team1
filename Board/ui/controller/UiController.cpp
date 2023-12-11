@@ -46,13 +46,11 @@ void UiController::accountExit() {
 }
 
 void UiController::accountCreatId() {
-    uiService->creatId();
     AccountRegisterRequestForm *requestForm;
     AccountRegisterResponseForm *responseForm;
 
     requestForm = uiService->creatId();
     AccountController &accountController = AccountController:: getInstance();
-
     responseForm = accountController.accountregister(requestForm);
 
 }
