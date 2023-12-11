@@ -8,10 +8,12 @@
 
 #include <vector>
 #include <memory>
-#include "response/AccountResponse.h"
+
 #include "AccountService.h"
 #include "../repository/AccountRepository.h"
 #include "response/AccountLoginResponse.h"
+#include "response/AccountRegisterResponse.h"
+#include "request/AccountRegisterRequest.h"
 
 class AccountServiceImpl : public AccountService {
 private:
@@ -19,7 +21,7 @@ private:
 
 public:
     AccountServiceImpl(std::shared_ptr<AccountRepository> accountRepository);
-    std::vector<AccountResponse> acregister() override;
+    AccountRegisterResponse *acregister(AccountRegisterRequest *request) override;
     AccountLoginResponse *aclogin(AccountLoginRequest *request) override;
 };
 
