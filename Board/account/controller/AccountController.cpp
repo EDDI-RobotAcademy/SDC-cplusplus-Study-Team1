@@ -3,6 +3,8 @@
 //
 
 #include "AccountController.h"
+#include "request_form/AccountLoginRequestForm.h"
+#include "../service/response/AccountLoginResponse.h"
 
 #include <iostream>
 #include <vector>
@@ -17,11 +19,16 @@ std::vector<AccountResponse> AccountController::accountreg()
 
     return std::vector<AccountResponse>();
 }
-std::vector<AccountResponse> AccountController::accountlogin()
+
+
+AccountLoginResponseForm *AccountController::accountlogin(AccountLoginRequestForm *requestForm)
 {
     std::cout << "AccountController: 로그인 서비스로 이동!" << std::endl;
 
-    accountService->aclogin();
+    AccountLoginResponse *response =
+            accountService->aclogin(requestForm->toAccountLoginRequest());
 
-    return std::vector<AccountResponse>();
+    if (response == nullptr) { return nullptr; }
+
+    return response->toResponseForm();
 }

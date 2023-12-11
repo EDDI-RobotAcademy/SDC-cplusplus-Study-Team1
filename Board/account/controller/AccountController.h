@@ -10,19 +10,18 @@
 #include <vector>
 
 #include "../service/AccountService.h"
+#include "request_form/AccountLoginRequestForm.h"
+#include "response_form/AccountLoginResponseForm.h"
 
 class AccountController {
 private:
     std::shared_ptr<AccountService> accountService;
-    //BoardService* boardService;
 
 public:
     AccountController(std::shared_ptr<AccountService> accountService);
-    //explicit BoardController(BoardService* service) : boardService(service) { }
 
     std::vector<AccountResponse> accountreg();
-    std::vector<AccountResponse> accountlogin();
-
+    AccountLoginResponseForm *accountlogin(AccountLoginRequestForm *requestForm);
 };
 
 

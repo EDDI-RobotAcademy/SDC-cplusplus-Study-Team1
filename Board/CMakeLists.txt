@@ -55,6 +55,14 @@ add_executable(class_test main.cpp
         ui/controller/UiControllerCommand.h
         ui/controller/UiController.cpp
         ui/controller/UiController.h
+        account/controller/request_form/AccountLoginRequestForm.cpp
+        account/controller/request_form/AccountLoginRequestForm.h
+        account/controller/response_form/AccountLoginResponseForm.cpp
+        account/controller/response_form/AccountLoginResponseForm.h
+        account/service/request/AccountLoginRequest.cpp
+        account/service/request/AccountLoginRequest.h
+        account/service/response/AccountLoginResponse.cpp
+        account/service/response/AccountLoginResponse.h
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
