@@ -5,12 +5,10 @@
 //
 #include "Account.h"
 Account::Account() {}
-Account::Account(int id, const std::string& account_id,std::string& password)
-        : id(id),
-          account_id(account_id),
-          password(password),
-          created_at(std::chrono::system_clock::now()),
-          updated_at(created_at) { }
+
+Account::Account(const std::string& account_id, const std::string& password)
+        : account_id(account_id),
+          password(password){ }
 
 
 Account::Account(int id, const std::string& account_id, const std::string& password)
@@ -25,9 +23,7 @@ Account::Account(int id, const std::string& account_id, const std::string& passw
 void Account::printAccountInfo() const {
     std::cout << "ID: " << id
               << ", account_id: " << account_id
-              << ", password: " << password
-              << ", Created At: " << std::chrono::system_clock::to_time_t(created_at)
-              << ", Updated At: " << std::chrono::system_clock::to_time_t(updated_at) << std::endl;
+              << ", password: " << password << std::endl;
 
 }
 

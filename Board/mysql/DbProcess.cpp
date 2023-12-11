@@ -137,7 +137,7 @@ bool DbProcess::checkid(std::string& accountId)
 
 
 // ID와 PASS 일치 여부 확인
-bool DbProcess::checkAccount(std::string& accountId, std::string& password) {
+bool DbProcess::checkAccount(std::string accountId, std::string password) {
     std::string checkQuery = "SELECT * FROM account where account_id = '" + accountId + "' and password = '" + password + "'";
 
     if (mysql_query(conn, checkQuery.c_str()) == 0) {

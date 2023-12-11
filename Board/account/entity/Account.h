@@ -13,12 +13,11 @@ private:
     int id;
     std::string account_id;
     std::string password;
-    std::chrono::system_clock::time_point created_at;
-    std::chrono::system_clock::time_point updated_at;
+
 
 public:
     Account();
-    Account(int id, const std::string& account_id,std::string& password);
+    Account(const std::string& account_id, const std::string& password);
     Account(int id, const std::string& account_id, const std::string& password);
     std::string getAccountId();
     std::string get_password();

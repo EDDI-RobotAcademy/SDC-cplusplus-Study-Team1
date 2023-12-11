@@ -5,6 +5,7 @@
 #include "AccountRepositoryImpl.h"
 #include "../../mysql/DbProcess.h"
 #include "../../console/user_keyboard/user_keyboard_input.h"
+#include "../service/request/AccountLoginRequest.h"
 
 
 std::vector<Account> accountfetchResults(MYSQL* conn) {
@@ -88,24 +89,3 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
 }
 
 
-
-// 로그인
-std::vector<Account> AccountRepositoryImpl::login()
-{
-    std::cout << "로그인 시도!" << std::endl;
-
-    std::string userId = "assss";
-    std::string userPassword = "ppppp";
-
-    DbProcess* dbInstance = DbProcess::getInstance();
-
-    int check_AccountInfo = dbInstance->checkAccount(userId, userPassword);
-    if(check_AccountInfo == 0){
-        std::cout << "로그인 실패" << std::endl;
-    }
-    else if (check_AccountInfo == 1) {
-        std::cout << "로그인 성공" << std::endl;
-    }
-
-    return std::vector<Account>();
-}
