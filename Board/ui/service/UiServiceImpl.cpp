@@ -25,12 +25,10 @@ AccountLoginRequestForm* UiServiceImpl::accountLogin() {
     return uiAccount->UiServiceLoginHandler();
 }
 
-std::vector<UiResponse> UiServiceImpl::creatId() {
+AccountRegisterRequestForm*  UiServiceImpl::creatId() {
     std::cout << "회원가입 합니다." << std::endl;
 
-    uiAccount->UiServiceCreateAccountHandler();
-
-    return std::vector<UiResponse>();
+    return  uiAccount->UiServiceCreateAccountHandler();
 }
 
 std::vector<UiResponse> UiServiceImpl::postCreat() {

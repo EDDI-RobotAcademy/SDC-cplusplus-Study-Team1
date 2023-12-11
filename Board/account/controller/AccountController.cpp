@@ -4,7 +4,9 @@
 
 #include "AccountController.h"
 #include "request_form/AccountLoginRequestForm.h"
+#include "request_form/AccountRegisterRequestForm.h"
 #include "../service/response/AccountLoginResponse.h"
+#include "../service/response/AccountRegisterResponse.h"
 #include "../service/AccountServiceImpl.h"
 #include "../repository/AccountRepositoryImpl.h"
 
@@ -13,13 +15,13 @@
 
 AccountController::AccountController(std::shared_ptr<AccountService> accountService) : accountService(accountService) { }
 
-std::vector<AccountResponse> AccountController::accountreg()
+AccountRegisterResponseForm *AccountController::accountregister(AccountRegisterRequestForm *requestForm)
 {
     std::cout << "AccountController: 회원가입 서비스로 이동!" << std::endl;
+    AccountRegisterResponse *response = accountService->acregister(requestForm->toAccountRegisterRequest());
 
-    accountService->acregister();
-
-    return std::vector<AccountResponse>();
+ if(response ==nullptr){return nullptr; }
+    return response->toResponseForm();
 }
 
 

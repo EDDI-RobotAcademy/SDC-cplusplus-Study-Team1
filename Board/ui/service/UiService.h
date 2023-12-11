@@ -8,12 +8,14 @@
 #include <vector>
 #include "response/UiResponse.h"
 #include "../../account/controller/request_form/AccountLoginRequestForm.h"
+#include "../../account/controller/request_form/AccountRegisterRequestForm.h"
 
 class UiService{
 public:
     virtual ~UiService() = default;
     virtual AccountLoginRequestForm* accountLogin() = 0;
-    virtual std::vector<UiResponse> creatId() = 0;
+    virtual AccountRegisterRequestForm* creatId() =0;
+    // virtual std::vector<UiResponse> creatId() = 0;
     virtual std::vector<UiResponse> accountExit() = 0;
     virtual std::vector<UiResponse> postCreat() = 0;
     virtual std::vector<UiResponse> postRead() = 0;

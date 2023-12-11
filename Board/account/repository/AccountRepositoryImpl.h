@@ -13,7 +13,7 @@
 class AccountRepositoryImpl : public AccountRepository {
 
 public:
-    std::vector<Account> registerinfosave() override;
+    Account *registerinfosave(Account *account) override;
 };
 
 

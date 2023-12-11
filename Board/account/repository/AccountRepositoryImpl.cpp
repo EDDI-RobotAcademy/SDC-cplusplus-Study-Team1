@@ -49,17 +49,17 @@ std::vector<Account> accountfetchResults(MYSQL* conn) {
 
 
 // 회원 정보 저장
-std::vector<Account> AccountRepositoryImpl::registerinfosave()
+Account *AccountRepositoryImpl::registerinfosave(Account *account)
 {
     std::cout << "AccountReopository: 입력받은 회원정보 저장!" << std::endl;
 
-    Account *account = new Account(); //동적 할당 account 포인터 객체 생성
+    //Account *account = new Account(); //동적 할당 account 포인터 객체 생성
 
     DbProcess* dbInstance = DbProcess::getInstance();
 
     // 아이디, 비번 받아오는 걸로 수정해야 하는디~
-    std::string accountId = "ffdfdfdss";
-    std::string password = "ppppp";
+    std::string accountId = account->getAccountId();
+    std::string password = account->get_password();
 
     // 아이디 중복 확인
     int check_id = dbInstance->checkid(accountId);
@@ -76,16 +76,11 @@ std::vector<Account> AccountRepositoryImpl::registerinfosave()
         dbInstance->insertData(queryString);
     }
 
-    delete account;
+    //delete account;
 
-    std::vector<Account> accountList = accountfetchResults(dbInstance->getConn()); // db.getConn -> 저장된 데이터 불러오기
 
-    //처리 결과 확인하는 부분(아이디와 비밀번호 잘 저장되었는지 출력)
-    for (const auto& account : accountList) {
-        account.printAccountInfo();
-    }
 
-    return accountList;
+    return account;
 }
 
 

@@ -14,7 +14,7 @@
 class UiAccountImpl : public UiAccount {
 public:
     AccountLoginRequestForm *UiServiceLoginHandler() override;
-    std::vector<BoardResponse> UiServiceCreateAccountHandler() override;
+    AccountRegisterRequestForm *UiServiceCreateAccountHandler() override;
     std::vector<BoardResponse> UiServiceExitHandler() override;
 };
 
