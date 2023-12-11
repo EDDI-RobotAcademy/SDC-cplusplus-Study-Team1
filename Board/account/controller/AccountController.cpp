@@ -5,6 +5,8 @@
 #include "AccountController.h"
 #include "request_form/AccountLoginRequestForm.h"
 #include "../service/response/AccountLoginResponse.h"
+#include "../service/AccountServiceImpl.h"
+#include "../repository/AccountRepositoryImpl.h"
 
 #include <iostream>
 #include <vector>
@@ -31,4 +33,19 @@ AccountLoginResponseForm *AccountController::accountlogin(AccountLoginRequestFor
     if (response == nullptr) { return nullptr; }
 
     return response->toResponseForm();
+}
+
+AccountController& AccountController::getInstance(
+        std::shared_ptr<AccountService> accountService)
+{
+    static AccountController instance(accountService);
+    return instance;
+}
+
+AccountController& AccountController::getInstance() {
+    static AccountController instance(
+            std::make_shared<AccountServiceImpl>(
+                    std::make_shared<AccountRepositoryImpl>()));
+
+    return instance;
 }

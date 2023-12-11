@@ -4,6 +4,9 @@
 
 #include "UiController.h"
 #include "UiControllerCommand.h"
+#include "../../account/controller/request_form/AccountLoginRequestForm.h"
+#include "../../account/controller/response_form/AccountLoginResponseForm.h"
+#include "../../account/controller/AccountController.h"
 
 UiController::UiController(std::shared_ptr<UiService> uiService) : uiService(uiService) { }
 
@@ -24,7 +27,13 @@ void UiController::initializeCommandTable() {
 
 void UiController::accountLogin() {
 
-    uiService->accountLogin();
+    AccountLoginRequestForm *requestForm;
+    AccountLoginResponseForm *responseForm;
+
+    requestForm = uiService->accountLogin();
+    AccountController &accountController = AccountController:: getInstance();
+
+    responseForm = accountController.accountlogin(requestForm);
 }
 
 UiController::~UiController() {

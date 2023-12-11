@@ -22,6 +22,9 @@ public:
 
     std::vector<AccountResponse> accountreg();
     AccountLoginResponseForm *accountlogin(AccountLoginRequestForm *requestForm);
+
+    static AccountController& getInstance(std::shared_ptr<AccountService> accountService);
+    static AccountController& getInstance();
 };
 
 
