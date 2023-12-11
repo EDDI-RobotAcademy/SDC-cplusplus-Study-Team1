@@ -19,12 +19,10 @@ std::vector<UiResponse> UiServiceImpl::accountExit() {
     return std::vector<UiResponse>();
 }
 
-std::vector<UiResponse> UiServiceImpl::accountLogin() {
+AccountLoginRequestForm* UiServiceImpl::accountLogin() {
     std::cout << "로그인을 합니다." << std::endl;
 
-    uiAccount->UiServiceLoginHandler();
-
-    return std::vector<UiResponse>();
+    return uiAccount->UiServiceLoginHandler();
 }
 
 std::vector<UiResponse> UiServiceImpl::creatId() {

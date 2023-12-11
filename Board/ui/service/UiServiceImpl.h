@@ -20,7 +20,7 @@ private:
 
 public:
     UiServiceImpl(std::shared_ptr<UiAccount> uiAccount, std::shared_ptr<UiBoard> uiBoard);
-    std::vector<UiResponse> accountLogin() override;
+    AccountLoginRequestForm* accountLogin() override;
     std::vector<UiResponse> creatId() override;
     std::vector<UiResponse> accountExit() override;
     std::vector<UiResponse> postCreat() override;
