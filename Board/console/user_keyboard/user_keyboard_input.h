@@ -10,12 +10,11 @@
 #include <iostream>
 
 class user_keyboard_input {
-public:
-    void get_user_keyboard_input(std::string& keyboard_input);
+private:
 
+public:
     void get_user_keyboard_input_with_message(
             const std::string& output_message, std::string& keyboard_input);
-
 
     user_keyboard_input();
     ~user_keyboard_input();

@@ -42,7 +42,7 @@ void console_window::start_console_ui_window()
     auto uiController = std::make_shared<UiController>(uiService);
     uiController->initializeCommandTable();
 
-
+    user_keyboard_input _user;
     // UiBoardImpl 포인터 ( ui / console / UiBoard ) - 추후 사용을 위해 기입함(불필요 시 삭제)
     // 사용 예시 ) uiBoard->UiServiceCreateHandler();
 
@@ -57,7 +57,7 @@ void console_window::start_console_ui_window()
 
 int console_window::user_choice_number_for_board_command()
 {
-    std::string keyboard_input = { 0 };
+    std::string keyboard_input;
 
     std::string command_message = "0번 회원 가입\n"
                                   "1번 로그인\n"

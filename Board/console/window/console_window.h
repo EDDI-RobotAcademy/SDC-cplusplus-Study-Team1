@@ -7,6 +7,7 @@
 
 
 class console_window {
+private:
 public:
     console_window();
     ~console_window();
@@ -14,5 +15,6 @@ public:
     int user_choice_number_for_board_command();
 };
 
+static bool isFirst = true;
 
 #endif //CLASS_TEST_CONSOLE_WINDOW_H
