@@ -8,41 +8,10 @@
 #include "../service/request/AccountLoginRequest.h"
 
 
-std::vector<Account> accountfetchResults(MYSQL* conn) {
-    std::vector<Account> accountList;
-
-    const std::string& selectQuery = "SELECT * FROM account";
-
-    //mysql_query로 select가 실행됨
-    if (mysql_query(conn, selectQuery.c_str()) == 0) {
-        // result에 결과값이 저장됨
-        MYSQL_RES* result = mysql_store_result(conn);
-        if (result == nullptr) {
-            std::cerr << "mysql_store_result() failed" << std::endl;
-            return accountList;
-        }
-
-        MYSQL_ROW row; // 한 행의 데이터
-        // 루프를 돌면서 account 객체를 만듬
-        while ((row = mysql_fetch_row(result)) != nullptr) {
-            Account account(
-                    std::stoi(row[0]),        // id
-                    row[1],                   // account_id
-                    row[2]                  // password
-//                    row[3] ? row[3] : "NULL", // reg_date
-//                    row[4] ? row[4] : "NULL"  // upd_date
-            );
-
-            accountList.push_back(account);
-            // 위의 내용을 accountList.라는 동적 배열에 할당함
-        }
-
-        mysql_free_result(result);
-    } else {
-        std::cerr << "mysql_query() failed" << std::endl;
-    }
-
-    return accountList;
+AccountRepositoryImpl& AccountRepositoryImpl::getInstance()
+{
+    static AccountRepositoryImpl instance;
+    return instance;
 }
 
 

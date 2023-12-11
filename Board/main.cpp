@@ -24,8 +24,19 @@ void initializeMysqlConnection()
     DbProcess* dbInstance = DbProcess::getInstance(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 }
 
+void init_singleton_object()
+{
+    AccountRepositoryImpl& repository = AccountRepositoryImpl::getInstance();
+    std::shared_ptr<AccountService> service =
+            std::make_shared<AccountServiceImpl>(
+                    std::make_shared<AccountRepositoryImpl>());
+    AccountController& controller = AccountController::getInstance(service);
+
+}
+
 int main() {
     initializeMysqlConnection();
+    init_singleton_object();
 //    BoardRepository *boardRepository = new BoardRepositoryImpl();
 //    BoardService* boardService = new BoardServiceImpl();
 /*    auto boardRepository = std::make_shared<BoardRepositoryImpl>();
